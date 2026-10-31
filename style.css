@@ -1,0 +1,584 @@
+/* ==========================================================================
+   Maison Vasseur — démo boulangerie (formule Essentiel)
+   Mobile d'abord. Couleurs : façade vert bouteille, dorure, farine, croûte.
+   ========================================================================== */
+
+:root {
+  --facade: #1f3b2d;
+  --facade-fonce: #142a1f;
+  --or: #c9a24a;
+  --or-clair: #e3c77e;
+  --farine: #f6f1e7;
+  --farine-fonce: #ece4d3;
+  --croute: #b5541e;
+  --encre: #1d1b17;
+  --encre-douce: #5d5546;
+  --ardoise: #262a28;
+  --craie: #efece4;
+  --bois: #7a5232;
+
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Noto Serif", serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --gouttiere: 20px;
+  --dock: 64px;
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 64px; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  padding-bottom: calc(var(--dock) + env(safe-area-inset-bottom));
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  color: var(--encre);
+  background: var(--farine);
+}
+
+h1, h2, h3, p, ul, ol, figure { margin: 0; }
+ul, ol { padding: 0; list-style: none; }
+a { color: inherit; }
+img, svg { display: block; max-width: 100%; }
+
+.visuellement-cache {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+:focus-visible { outline: 3px solid var(--croute); outline-offset: 3px; border-radius: 4px; }
+
+/* Bandeau démo ----------------------------------------------------------- */
+.bandeau-demo {
+  padding: 6px var(--gouttiere);
+  font-size: .78rem;
+  text-align: center;
+  color: var(--craie);
+  background: var(--encre);
+}
+.bandeau-demo a { color: var(--or-clair); }
+
+/* Barre du haut ---------------------------------------------------------- */
+.barre {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; gap: 12px;
+  min-height: 56px;
+  padding: 8px var(--gouttiere);
+  color: var(--farine);
+  background: var(--facade);
+  border-bottom: 1px solid rgba(201, 162, 74, .35);
+}
+.barre__nom {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-style: italic;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.barre__appel {
+  display: grid; place-items: center;
+  width: 40px; height: 40px; margin-left: auto;
+  border-radius: 50%;
+  color: var(--facade);
+  background: var(--or);
+}
+.barre__appel svg { width: 20px; height: 20px; fill: currentColor; }
+
+/* État ouvert / fermé (rempli par app.js) */
+/* Ovale de bâtard, filet doré double comme l'enseigne */
+.etat {
+  display: inline-flex; align-items: center; gap: 7px;
+  min-width: 0;
+  padding: 6px 16px;
+  font-size: .76rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  color: var(--farine);
+  border: 1px solid rgba(201, 162, 74, .8);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, .14);
+  box-shadow: inset 0 0 0 2px var(--facade), inset 0 0 0 3px rgba(201, 162, 74, .3);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.etat__point {
+  flex: none;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #7fcf8f;
+  box-shadow: 0 0 0 3px rgba(127, 207, 143, .25);
+}
+.etat--ferme .etat__point { background: #e08a6a; box-shadow: 0 0 0 3px rgba(224, 138, 106, .25); }
+.etat--bientot .etat__point { background: var(--or-clair); box-shadow: 0 0 0 3px rgba(227, 199, 126, .3); }
+
+/* Devanture -------------------------------------------------------------- */
+.devanture { background: var(--facade); color: var(--farine); }
+
+.devanture { position: relative; }
+
+/* La photo se fond dans le vert de la façade, vers le bas */
+.devanture__photo { position: relative; }
+.devanture__photo img {
+  width: 100%;
+  height: 56svh;
+  min-height: 360px;
+  max-height: 560px;
+  object-fit: cover;
+  object-position: 85% 35%;
+}
+.devanture__photo::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 48%, var(--facade) 97%);
+}
+
+.devanture__texte {
+  position: relative;
+  margin-top: -132px;
+  padding: 0 var(--gouttiere) 40px;
+}
+.devanture__metier {
+  font-family: var(--serif);
+  font-size: .8rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--or-clair);
+}
+.devanture__nom {
+  margin: 8px 0 10px;
+  font-family: var(--serif);
+  font-size: clamp(2.4rem, 11vw, 4rem);
+  font-weight: 400;
+  line-height: .95;
+  color: var(--or);
+  text-shadow: 0 2px 18px rgba(0, 0, 0, .45);
+}
+.devanture__nom em { white-space: nowrap; }
+.devanture__depuis { font-size: .88rem; color: rgba(246, 241, 231, .78); }
+.devanture__accroche {
+  margin-top: 22px;
+  font-family: var(--serif);
+  font-size: clamp(1.35rem, 5.6vw, 1.9rem);
+  line-height: 1.22;
+}
+
+/* Fenêtre cintrée : la photo de la boulangère (section La maison) */
+.fenetre { max-width: 340px; margin: 0 auto 36px; }
+.fenetre__cadre {
+  padding: 7px;
+  border: 2px solid var(--or);
+  border-radius: 999px 999px 6px 6px;
+}
+.fenetre__cadre img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 999px 999px 2px 2px;
+}
+.fenetre__legende {
+  margin-top: 12px;
+  font-family: var(--serif);
+  font-size: .95rem;
+  font-style: italic;
+  text-align: center;
+  color: var(--encre-douce);
+}
+
+/* Photos dans les sections */
+.photo-large { margin: 26px calc(-1 * var(--gouttiere)) 0; }
+.photo-large img { width: 100%; height: auto; aspect-ratio: 8 / 5; object-fit: cover; }
+
+
+/* Boutons ---------------------------------------------------------------- */
+.actions { display: grid; gap: 10px; margin-top: 24px; }
+.bouton {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 52px;
+  padding: 12px 20px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid currentColor;
+  border-radius: 6px;
+  transition: transform .15s;
+}
+.bouton:active { transform: translateY(1px); }
+.bouton--plein { color: var(--facade); background: var(--or); border-color: var(--or); }
+.infos .bouton--plein { color: var(--farine); background: var(--facade); border-color: var(--facade); }
+
+/* Sections --------------------------------------------------------------- */
+.section { padding: 56px 0; }
+.contenu { max-width: 640px; margin: 0 auto; padding: 0 var(--gouttiere); }
+.titre {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 9vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--facade);
+}
+.chapo { margin-top: 10px; color: var(--encre-douce); }
+.note { margin-top: 16px; font-size: .9rem; color: var(--encre-douce); }
+
+/* Fournées : une frise verticale */
+.fournees__liste { margin-top: 28px; counter-reset: f; }
+.fournee {
+  position: relative;
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 2px 16px;
+  padding: 0 0 26px;
+}
+.fournee::before {               /* trait de la frise */
+  content: "";
+  position: absolute; left: 104px; top: 10px; bottom: -6px;
+  width: 2px;
+  background: var(--farine-fonce);
+}
+.fournee:last-child::before { display: none; }
+.fournee::after {                /* pastille */
+  content: "";
+  position: absolute; left: 99px; top: 6px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--farine);
+  border: 2px solid var(--croute);
+}
+.fournee__heure {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  line-height: 1.1;
+  color: var(--croute);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.fournee__quoi { padding-left: 14px; }
+.fournee__badge {
+  grid-column: 2;
+  justify-self: start;
+  margin: 6px 0 0 14px;
+  padding: 2px 9px;
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--farine);
+  background: var(--croute);
+  border-radius: 99px;
+}
+.fournee--passee .fournee__heure,
+.fournee--passee .fournee__quoi { opacity: .45; }
+.fournee--passee::after { background: var(--farine-fonce); border-color: var(--farine-fonce); }
+.fournee--prochaine::after { background: var(--croute); box-shadow: 0 0 0 5px rgba(181, 84, 30, .18); }
+
+/* Ardoise ---------------------------------------------------------------- */
+.ardoise-section { padding-top: 8px; }
+.ardoise {
+  position: relative;
+  padding: 30px 22px 26px;
+  color: var(--craie);
+  background:
+    radial-gradient(120% 80% at 20% 0%, rgba(255, 255, 255, .06), transparent 60%),
+    var(--ardoise);
+  border: 10px solid var(--bois);
+  border-radius: 6px;
+  box-shadow: 0 1px 0 #5c3c23 inset, 0 18px 30px -18px rgba(29, 27, 23, .6);
+  transform: rotate(-.6deg);
+}
+.ardoise__titre {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 400;
+  text-align: center;
+}
+.ardoise__titre::after {
+  content: "";
+  display: block;
+  width: 64px; height: 2px;
+  margin: 10px auto 0;
+  background: rgba(239, 236, 228, .5);
+  border-radius: 2px;
+}
+.ardoise__chapo {
+  max-width: 34em;
+  margin: 14px auto 0;
+  font-size: .9rem;
+  font-style: italic;
+  text-align: center;
+  opacity: .75;
+}
+
+/* Onglets (mobile, ajoutés par app.js) */
+.ardoise__onglets {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 20px;
+}
+.ardoise__onglets[hidden] { display: none; }
+.ardoise__onglets button {
+  flex: none;
+  min-height: 40px;
+  padding: 6px 14px;
+  font: inherit;
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--craie);
+  background: transparent;
+  border: 1.5px solid rgba(239, 236, 228, .4);
+  border-radius: 99px;
+  cursor: pointer;
+}
+.ardoise__onglets button[aria-pressed="true"] {
+  color: var(--ardoise);
+  background: var(--craie);
+  border-color: var(--craie);
+}
+
+.categorie { margin-top: 24px; }
+.categorie__titre {
+  padding-bottom: 6px;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--or-clair);
+  border-bottom: 1px solid rgba(239, 236, 228, .18);
+}
+.categorie__formule {
+  margin-top: 10px;
+  padding: 10px 12px;
+  font-size: .9rem;
+  border: 1.5px dashed rgba(227, 199, 126, .55);
+  border-radius: 4px;
+}
+.categorie__formule b { white-space: nowrap; color: var(--or-clair); }
+
+.ardoise--onglets .categorie { display: none; }
+.ardoise--onglets .categorie.est-active { display: block; }
+.ardoise--onglets .categorie__titre { display: none; }
+
+.ardoise__liste { margin-top: 6px; }
+.ardoise__liste li {
+  display: flex; align-items: baseline; gap: 8px;
+  padding: 7px 0;
+}
+.ardoise__liste li::after { display: none; }
+.ardoise__liste span {
+  display: flex; align-items: baseline; gap: 8px; flex: 1;
+  font-family: var(--serif);
+  font-size: 1.12rem;
+}
+.ardoise__liste span::after {   /* points de conduite */
+  content: "";
+  flex: 1;
+  min-width: 16px;
+  border-bottom: 2px dotted rgba(239, 236, 228, .35);
+  transform: translateY(-4px);
+}
+.ardoise__liste b {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.ardoise__specialite {
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px dashed rgba(239, 236, 228, .3);
+  text-align: center;
+}
+.ardoise__surtitre {
+  font-size: .75rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--or-clair);
+}
+.ardoise__plat {
+  margin-top: 6px;
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  line-height: 1.15;
+}
+.ardoise__plat span { display: block; font-family: var(--sans); font-size: .9rem; opacity: .75; }
+.ardoise__mot { margin-top: 10px; font-size: .95rem; font-style: italic; opacity: .85; }
+
+/* La maison -------------------------------------------------------------- */
+.maison__texte { margin-top: 16px; font-size: 1.12rem; }
+.faits { display: grid; gap: 10px; margin-top: 28px; }
+.faits li {
+  display: grid;
+  grid-template-columns: 76px 1fr;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: #fffdf8;
+  border: 1px solid var(--farine-fonce);
+  border-radius: 6px;
+}
+.faits b {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--croute);
+}
+.faits span { font-size: .95rem; color: var(--encre-douce); }
+
+.commande {
+  margin-top: 28px;
+  padding: 22px 20px;
+  color: var(--farine);
+  background: var(--facade);
+  border-radius: 6px;
+}
+.commande__titre { font-family: var(--serif); font-size: 1.5rem; color: var(--or-clair); margin-bottom: 6px; }
+.lien-fleche {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 8px 0;
+  font-weight: 700;
+  color: var(--or-clair);
+  text-underline-offset: 4px;
+}
+.lien-fleche::after { content: " →"; }
+
+/* Horaires & accès ------------------------------------------------------- */
+.infos { background: var(--farine-fonce); }
+.infos__grille { display: grid; gap: 32px; margin-top: 24px; }
+
+.horaires__table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.horaires__table th,
+.horaires__table td {
+  padding: 13px 0;
+  text-align: left;
+  border-bottom: 1px solid rgba(29, 27, 23, .12);
+}
+.horaires__table th { font-weight: 600; }
+.horaires__table td { text-align: right; }
+.horaires__table .ferme td { color: var(--croute); font-weight: 600; }
+.horaires__table .aujourdhui th,
+.horaires__table .aujourdhui td {
+  background: var(--farine);
+  font-weight: 700;
+}
+.horaires__table .aujourdhui th { padding-left: 12px; border-radius: 6px 0 0 6px; }
+.horaires__table .aujourdhui td { padding-right: 12px; border-radius: 0 6px 6px 0; }
+.horaires__table .aujourdhui th::after {
+  content: "aujourd'hui";
+  margin-left: 8px;
+  padding: 1px 7px;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--farine);
+  background: var(--facade);
+  border-radius: 99px;
+  vertical-align: 2px;
+}
+
+.plan { overflow: hidden; border-radius: 8px; border: 1px solid rgba(29, 27, 23, .12); background: #fffdf8; }
+.plan__carte {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 0;
+  background: var(--farine-fonce);
+}
+.plan__legende { padding: 10px 14px; font-size: .88rem; color: var(--encre-douce); }
+.adresse {
+  margin-top: 18px;
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-style: normal;
+  line-height: 1.3;
+}
+.actions--serre { margin-top: 16px; }
+
+/* Pied ------------------------------------------------------------------- */
+.pied {
+  padding: 40px var(--gouttiere) 32px;
+  text-align: center;
+  font-size: .9rem;
+  color: rgba(246, 241, 231, .8);
+  background: var(--facade-fonce);
+}
+.pied__nom { font-family: var(--serif); font-size: 1.5rem; font-style: italic; color: var(--or); margin-bottom: 4px; }
+.pied__petit { margin-top: 16px; font-size: .8rem; opacity: .7; }
+.pied a { color: var(--or-clair); }
+
+/* Dock mobile ------------------------------------------------------------ */
+.dock {
+  position: fixed; inset: auto 0 0; z-index: 30;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  height: calc(var(--dock) + env(safe-area-inset-bottom));
+  padding-bottom: env(safe-area-inset-bottom);
+  background: var(--facade);
+  border-top: 1px solid rgba(201, 162, 74, .35);
+}
+.dock__lien {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--farine);
+  text-decoration: none;
+}
+.dock__lien:first-child { color: var(--facade); background: var(--or); }
+.dock__lien svg { width: 22px; height: 22px; fill: currentColor; }
+
+/* Écrans plus larges ----------------------------------------------------- */
+@media (min-width: 560px) {
+  .actions { grid-template-columns: 1fr 1fr; }
+  .devanture__texte { max-width: 640px; margin-inline: auto; }
+  .photo-large { margin-inline: 0; }
+  .photo-large img { border-radius: 6px; }
+}
+
+/* Assez de place : toute la carte d'un coup, sur deux colonnes */
+@media (min-width: 720px) {
+  .ardoise { padding: 40px 44px 34px; transform: rotate(-.35deg); }
+  .ardoise__onglets:not([hidden]) { display: none; }
+  .ardoise--onglets .categorie { display: block; }
+  .ardoise--onglets .categorie__titre { display: block; }
+  .ardoise__grille { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; }
+}
+
+@media (min-width: 900px) {
+  :root { --gouttiere: 32px; }
+  body { padding-bottom: 0; }
+  .dock { display: none; }
+  .barre { padding-inline: max(var(--gouttiere), calc((100% - 1100px) / 2)); }
+  /* Texte à gauche sur le vert, photo à droite qui s'y fond */
+  .devanture {
+    display: grid;
+    grid-template-columns: 1fr 46vw;
+    min-height: min(88vh, 780px);
+  }
+  .devanture__photo { grid-area: 1 / 2; }
+  .devanture__photo img { height: 100%; min-height: 0; max-height: none; object-position: 40% 35%; }
+  .devanture__photo::after {
+    background: linear-gradient(to right, var(--facade), transparent 30%);
+  }
+  .devanture__texte {
+    grid-area: 1 / 1;
+    align-self: center;
+    max-width: none;
+    margin: 0;
+    padding: 72px 56px 72px max(var(--gouttiere), calc((100vw - 1100px) / 2));
+  }
+  .devanture__nom { font-size: clamp(3.6rem, 6vw, 5.2rem); }
+  .devanture__accroche { max-width: 16em; }
+  .devanture .actions { max-width: 520px; }
+  .maison__grille {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 72px;
+    align-items: start;
+  }
+  .fenetre { margin: 0; }
+  .section { padding: 88px 0; }
+  .contenu--large { max-width: 1040px; }
+  .infos__grille { grid-template-columns: 1fr 1.15fr; gap: 56px; align-items: start; }
+  .faits { grid-template-columns: repeat(3, 1fr); }
+  .faits li { grid-template-columns: 1fr; align-items: start; }
+}
