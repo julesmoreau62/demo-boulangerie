@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en" data-moment="jour">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Delcourt Bakery · Artisan baker in Étaples</title>
+  <meta name="description" content="Boulangerie Delcourt in Étaples, France: sourdough bread made at night, three batches a day. Reserve your bread online and pick it up with the batch of your choice.">
+  <!-- Démo : commerce fictif, à ne pas indexer -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f4ecdf">
+  <link rel="alternate" hreflang="fr" href="https://julesmoreau62.github.io/demo-boulangerie/">
+  <link rel="alternate" hreflang="en" href="https://julesmoreau62.github.io/demo-boulangerie/en/">
+  <link rel="preload" href="../fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../style.css">
+  <script>
+    /* Avant le premier affichage : jour ou nuit à Étaples, pour ne pas clignoter. */
+    (function (d) {
+      d.classList.add("js");
+      try {
+        var q = /[?&]heure=(\d{1,2})(?:[:h](\d{2}))?/.exec(location.search);
+        var p = q ? [q[1], q[2] || 0] : new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date()).split(":");
+        var m = +p[0] * 60 + +p[1];
+        d.setAttribute("data-moment", m >= 1200 || m < 390 ? "nuit" : "jour");
+      } catch (e) {}
+    })(document.documentElement);
+  </script>
+  <script src="../app.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Bakery",
+    "name": "Boulangerie Delcourt",
+    "description": "Bakery and pastry shop. Sourdough bread mixed at night and baked on a stone deck, butter pastries, sugar tart. Online reservations, cakes to order.",
+    "url": "https://julesmoreau62.github.io/demo-boulangerie/en/",
+    "hasMenu": "https://julesmoreau62.github.io/demo-boulangerie/en/bread.html",
+    "telephone": "+33353014791",
+    "priceRange": "€",
+    "address": { "@type": "PostalAddress", "streetAddress": "12 rue du Four-à-Pain", "postalCode": "62630", "addressLocality": "Étaples", "addressCountry": "FR" },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday"], "opens": "06:45", "closes": "19:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "06:45", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "07:00", "closes": "12:30" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- La marque : une boule de pain vue du dessus, trois coups de lame. La nuit, c'est aussi la lune. -->
+      <mask id="grigne" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+        <rect width="32" height="32" fill="#fff"/>
+        <path d="M9.2 11.6c3.2-2.3 7-3.2 10.6-2.8M7.4 17.4c4.4-3.2 9.9-4.6 15.4-4.1M10.4 23.1c3.3-2.1 7.3-2.9 11.2-2.4" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round"/>
+      </mask>
+      <!-- La baguette des sachets : sept coups de lame -->
+      <path id="baguette-corps" d="M10 47C8 34 26 22 58 18C180 6 420 4 548 14C578 17 594 28 592 40C590 53 572 62 540 65C420 76 180 75 60 66C30 63 12 58 10 47Z"/>
+    </defs>
+    <symbol id="marque" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14.5" fill="currentColor" mask="url(#grigne)"/></symbol>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-fleche" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bas" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6.5h16M4 12h16M4 17.5h16" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol>
+    <symbol id="i-fermer" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol>
+  </svg>
+
+  <p class="bandeau-demo">Demo · fictional business, made by <a href="https://moreaudigital.fr/">Moreau Digital</a> · Premium plan</p>
+
+  <header class="barre">
+    <a class="barre__marque" href="#haut"><svg aria-hidden="true"><use href="#marque"/></svg><span class="visuellement-cache">Delcourt, back to top</span></a>
+    <nav class="barre__nav" aria-label="Site pages">
+      <a href="#nuit">The night</a>
+      <a href="bread.html">Our bread</a>
+      <a href="cakes.html">Cakes</a>
+      <a href="#reserver">Reserve</a>
+      <a href="#venir">Visit</a>
+    </nav>
+    <p class="etat" data-etat hidden><span class="etat__point" aria-hidden="true"></span><span data-etat-texte></span></p>
+    <a class="langue" href="../index.html" hreflang="fr" lang="fr" aria-label="Version française">FR</a>
+  </header>
+
+  <main id="haut">
+
+    <!-- Maintenant : ce qui se passe au fournil à cette minute, heure d'Étaples -->
+    <section class="maintenant" aria-labelledby="titre">
+      <h1 id="titre" class="enseigne">
+        <span class="enseigne__nom" data-enseigne>Delcourt</span>
+        <svg class="baguette enseigne__baguette" viewBox="0 0 600 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <use class="baguette__corps" href="#baguette-corps"/>
+          <path class="baguette__grigne" style="--i:0" d="M84 58Q99.6 28.8 132 22Q116.4 51.2 84 58Z"/>
+          <path class="baguette__grigne" style="--i:1" d="M148 58Q163.6 28.8 196 22Q180.4 51.2 148 58Z"/>
+          <path class="baguette__grigne" style="--i:2" d="M212 58Q227.6 28.8 260 22Q244.4 51.2 212 58Z"/>
+          <path class="baguette__grigne" style="--i:3" d="M276 58Q291.6 28.8 324 22Q308.4 51.2 276 58Z"/>
+          <path class="baguette__grigne" style="--i:4" d="M340 58Q355.6 28.8 388 22Q372.4 51.2 340 58Z"/>
+          <path class="baguette__grigne" style="--i:5" d="M404 58Q419.6 28.8 452 22Q436.4 51.2 404 58Z"/>
+          <path class="baguette__grigne" style="--i:6" d="M468 58Q483.6 28.8 516 22Q500.4 51.2 468 58Z"/>
+        </svg>
+        <span class="enseigne__metier">Artisan baker in Étaples</span>
+      </h1>
+
+      <div class="maintenant__scene">
+        <figure class="hublot maintenant__hublot" data-hublot>
+          <img data-hublot-photo src="../photos/rond-matin-480.webp" srcset="../photos/rond-matin-480.webp 480w, ../photos/rond-matin-800.webp 800w" sizes="(min-width: 900px) 40vw, 74vw" width="480" height="480" fetchpriority="high" alt="A golden croissant and pain au chocolat on baking paper">
+          <span class="feu" aria-hidden="true"></span>
+        </figure>
+        <p class="horloge maintenant__horloge" aria-hidden="true" data-horloge><span data-hh>07</span><span class="horloge__sep">:</span><span data-mm>30</span></p>
+      </div>
+
+      <div class="maintenant__mots">
+        <p class="maintenant__phrase" data-phrase>Bread comes out of the oven at 6:45&nbsp;am, 11:30&nbsp;am and 5&nbsp;pm. Antoine bakes it at night.</p>
+        <div class="actions">
+          <a class="bouton bouton--four" href="#reserver">Reserve my bread</a>
+          <a class="bouton bouton--trait" href="#nuit"><span>A night at the bakery</span><svg class="icone" aria-hidden="true"><use href="#i-bas"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- La nuit : de 22 h à l'ouverture. Au défilement, l'horloge avance et le ciel s'éclaircit. -->
+    <section class="nuit" id="nuit" aria-labelledby="nuit-titre" data-nuit>
+      <div class="nuit__intro">
+        <h2 id="nuit-titre" class="titre">From 10 pm until opening time, Antoine is alone at the bakery.</h2>
+        <p class="chapo">Scroll down: the clock moves with you, from the starter to the first batch.</p>
+      </div>
+
+      <div class="nuit__piste" data-piste>
+        <div class="nuit__collant">
+          <!-- La jauge de la nuit : un coup de lame par étape, la baguette dore au four -->
+          <svg class="baguette nuit__baguette" viewBox="0 0 600 80" preserveAspectRatio="none" aria-hidden="true" focusable="false" data-baguette>
+            <use class="baguette__corps" href="#baguette-corps"/>
+            <path class="baguette__grigne" style="--i:0" data-grigne d="M84 58Q99.6 28.8 132 22Q116.4 51.2 84 58Z"/>
+            <path class="baguette__grigne" style="--i:1" data-grigne d="M148 58Q163.6 28.8 196 22Q180.4 51.2 148 58Z"/>
+            <path class="baguette__grigne" style="--i:2" data-grigne d="M212 58Q227.6 28.8 260 22Q244.4 51.2 212 58Z"/>
+            <path class="baguette__grigne" style="--i:3" data-grigne d="M276 58Q291.6 28.8 324 22Q308.4 51.2 276 58Z"/>
+            <path class="baguette__grigne" style="--i:4" data-grigne d="M340 58Q355.6 28.8 388 22Q372.4 51.2 340 58Z"/>
+            <path class="baguette__grigne" style="--i:5" data-grigne d="M404 58Q419.6 28.8 452 22Q436.4 51.2 404 58Z"/>
+            <path class="baguette__grigne" style="--i:6" data-grigne d="M468 58Q483.6 28.8 516 22Q500.4 51.2 468 58Z"/>
+          </svg>
+          <p class="horloge nuit__horloge" aria-hidden="true" data-nuit-horloge><span data-hh>22</span><span class="horloge__sep">:</span><span data-mm>00</span></p>
+
+          <ol class="etapes">
+            <li class="etape" data-t="0">
+              <span class="hublot etape__hublot"><img src="../photos/rond-levain-480.webp" srcset="../photos/rond-levain-480.webp 480w, ../photos/rond-levain-800.webp 800w" sizes="(min-width: 900px) 42vw, 70vw" width="480" height="480" loading="lazy" alt="A hand drops sourdough starter into a glass bowl"></span>
+              <div class="etape__mots">
+                <p class="etape__heure">10&nbsp;pm</p>
+                <h3 class="etape__titre">The starter</h3>
+                <p class="etape__texte">Antoine feeds the sourdough starter with rye flour and warm water. It is twenty years old and was born in this bakehouse.</p>
+              </div>
+            </li>
+            <li class="etape" data-t="90">
+              <span class="hublot etape__hublot"><img src="../photos/rond-petrissage-480.webp" srcset="../photos/rond-petrissage-480.webp 480w, ../photos/rond-petrissage-800.webp 800w" sizes="(min-width: 900px) 42vw, 70vw" width="480" height="480" loading="lazy" alt="Two hands knead a ball of dough on a floured counter"></span>
+              <div class="etape__mots">
+                <p class="etape__heure">11:30&nbsp;pm</p>
+                <h3 class="etape__titre">Mixing</h3>
+                <p class="etape__texte">Flour from a mill forty kilometres away, water, salt, starter. The mixer turns slowly so the dough stays cool, then the dough rests until 2 am.</p>
+              </div>
+            </li>
+            <li class="etape" data-t="270">
+              <span class="hublot etape__hublot"><img src="../photos/rond-faconnage-480.webp" srcset="../photos/rond-faconnage-480.webp 480w, ../photos/rond-faconnage-534.webp 534w" sizes="(min-width: 900px) 42vw, 70vw" width="480" height="480" loading="lazy" alt="A baker shapes baguettes lined up on a tray"></span>
+              <div class="etape__mots">
+                <p class="etape__heure">2:30&nbsp;am</p>
+                <h3 class="etape__titre">Shaping</h3>
+                <p class="etape__texte">Four hundred baguettes, rolled by hand one at a time, then laid in the folds of a linen cloth.</p>
+              </div>
+            </li>
+            <li class="etape" data-t="375">
+              <span class="hublot etape__hublot"><img src="../photos/rond-lame-480.webp" srcset="../photos/rond-lame-480.webp 480w, ../photos/rond-lame-800.webp 800w" sizes="(min-width: 900px) 42vw, 70vw" width="480" height="480" loading="lazy" alt="A cloud of flour falls from the baker’s hands onto a loaf"></span>
+              <div class="etape__mots">
+                <p class="etape__heure">4:15&nbsp;am</p>
+                <h3 class="etape__titre">The blade</h3>
+                <p class="etape__texte">A veil of flour, then five cuts on each baguette. In the oven they will open up into ears: the grigne.</p>
+              </div>
+            </li>
+            <li class="etape etape--four" data-t="420">
+              <span class="hublot etape__hublot" role="img" aria-label="The oven window, glowing red"><span class="feu"></span></span>
+              <div class="etape__mots">
+                <p class="etape__heure">5&nbsp;am</p>
+                <h3 class="etape__titre">Into the oven</h3>
+                <p class="etape__texte">A stone-deck oven at 250 °C, twenty-two minutes for a baguette. Outside, the street already smells of bread.</p>
+              </div>
+            </li>
+            <li class="etape etape--couleur" data-t="465">
+              <span class="hublot etape__hublot"><img src="../photos/rond-defournement-480.webp" srcset="../photos/rond-defournement-480.webp 480w, ../photos/rond-defournement-800.webp 800w" sizes="(min-width: 900px) 42vw, 70vw" width="480" height="480" loading="lazy" alt="Freshly baked loaves cooling on a rack trolley"></span>
+              <div class="etape__mots">
+                <p class="etape__heure">5:45&nbsp;am</p>
+                <h3 class="etape__titre">Out of the oven</h3>
+                <p class="etape__texte">The bread sings as it cools: the crust crackles. It only goes into a bag once it is warm, not hot.</p>
+              </div>
+            </li>
+            <li class="etape etape--couleur" data-t="525">
+              <span class="hublot etape__hublot"><img src="../photos/rond-ouverture-480.webp" srcset="../photos/rond-ouverture-480.webp 480w, ../photos/rond-ouverture-800.webp 800w" sizes="(min-width: 900px) 42vw, 70vw" width="480" height="480" loading="lazy" alt="The gilded “Boulangerie” sign above the shop window"></span>
+              <div class="etape__mots">
+                <p class="etape__heure">6:45&nbsp;am</p>
+                <h3 class="etape__titre">We open</h3>
+                <p class="etape__texte">Claire raises the shutter. First batch: baguettes, country loaves, croissants and pains au chocolat.</p>
+              </div>
+            </li>
+          </ol>
+
+          <p class="nuit__indice" aria-hidden="true"><span>Scroll</span><svg class="icone" aria-hidden="true"><use href="#i-bas"/></svg></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Les fournées du jour : rempli en direct par app.js -->
+    <section class="fournees" id="fournees" aria-labelledby="fournees-titre">
+      <div class="contenu">
+        <h2 id="fournees-titre" class="titre">Bread comes out of the oven three times a day.</h2>
+        <p class="chapo" data-tableau-jour>Monday to Saturday, closed on Wednesdays.</p>
+        <ol class="tableau" data-tableau>
+          <li class="tableau__ligne"><span class="tableau__heure">6:45<span class="tableau__h">am</span></span><span class="tableau__quoi">Baguettes, country loaves, croissants and pains au chocolat</span></li>
+          <li class="tableau__ligne"><span class="tableau__heure">11:30<span class="tableau__h">am</span></span><span class="tableau__quoi">Traditional baguettes and ficelles, in time for lunch</span></li>
+          <li class="tableau__ligne"><span class="tableau__heure">5:00<span class="tableau__h">pm</span></span><span class="tableau__quoi">Traditional baguettes, evening bread and a still-warm sugar tart</span></li>
+        </ol>
+        <p class="note">On Sundays, two batches: 7 am and 10 am.</p>
+        <a class="lien-fleche" href="bread.html">Today’s special bread and the full counter<svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a>
+      </div>
+    </section>
+
+    <!-- Réservation : le ticket s'imprime pendant qu'on choisit -->
+    <section class="reserver" id="reserver" aria-labelledby="reserver-titre">
+      <div class="contenu reserver__grille">
+        <div class="reserver__tete">
+          <h2 id="reserver-titre" class="titre">Your bread, set aside under your name.</h2>
+          <p class="chapo">Choose, then pick it up at the batch that suits you. You pay in the shop.</p>
+        </div>
+
+        <form class="commande" data-commande novalidate>
+          <fieldset class="commande__choix" data-choix>
+            <legend class="visuellement-cache">Products</legend>
+            <ul class="produits">
+              <li class="produit" data-id="tradition" data-prix="1.30">
+                <p class="produit__nom">Traditional baguette</p>
+                <p class="produit__detail"><span class="produit__prix" data-prix-texte>€1.30</span> <span>· thin crust, creamy crumb</span></p>
+                <div class="pas"><button type="button" data-moins aria-label="Remove a traditional baguette">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Add a traditional baguette">+</button></div>
+              </li>
+              <li class="produit" data-id="campagne" data-prix="4.60">
+                <p class="produit__nom">Sourdough country loaf, 800 g</p>
+                <p class="produit__detail"><span class="produit__prix" data-prix-texte>€4.60</span> <span>· sourdough, keeps four days</span></p>
+                <div class="pas"><button type="button" data-moins aria-label="Remove a country loaf">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Add a country loaf">+</button></div>
+              </li>
+              <li class="produit" data-id="cereales" data-prix="3.90">
+                <p class="produit__nom">Seeded loaf</p>
+                <p class="produit__detail"><span class="produit__prix" data-prix-texte>€3.90</span> <span>· flax, sunflower, sesame, poppy</span></p>
+                <div class="pas"><button type="button" data-moins aria-label="Remove a seeded loaf">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Add a seeded loaf">+</button></div>
+              </li>
+              <li class="produit" data-id="croissant" data-prix="1.25">
+                <p class="produit__nom">Butter croissant</p>
+                <p class="produit__detail"><span class="produit__prix" data-prix-texte>€1.25</span> <span>· Charentes butter</span></p>
+                <div class="pas"><button type="button" data-moins aria-label="Remove a croissant">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Add a croissant">+</button></div>
+              </li>
+              <li class="produit" data-id="chocolat" data-prix="1.45">
+                <p class="produit__nom">Pain au chocolat</p>
+                <p class="produit__detail"><span class="produit__prix" data-prix-texte>€1.45</span> <span>· two dark chocolate sticks</span></p>
+                <div class="pas"><button type="button" data-moins aria-label="Remove a pain au chocolat">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Add a pain au chocolat">+</button></div>
+              </li>
+              <li class="produit" data-id="cramique" data-prix="6.50">
+                <p class="produit__nom">Cramique, raisin brioche</p>
+                <p class="produit__detail"><span class="produit__prix" data-prix-texte>€6.50</span> <span>· the northern Sunday brioche</span></p>
+                <div class="pas"><button type="button" data-moins aria-label="Remove a cramique">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Add a cramique">+</button></div>
+              </li>
+              <li class="produit" data-id="tarte" data-prix="9.50">
+                <p class="produit__nom">Sugar tart, serves 6</p>
+                <p class="produit__detail"><span class="produit__prix" data-prix-texte>€9.50</span> <span>· brown sugar, butter, cream</span></p>
+                <div class="pas"><button type="button" data-moins aria-label="Remove a sugar tart">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Add a sugar tart">+</button></div>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="retrait" data-retrait>
+            <legend class="retrait__titre">Pick-up</legend>
+            <label class="champ"><span>Day</span>
+              <select name="jour" data-jour></select>
+            </label>
+            <label class="champ"><span>Batch</span>
+              <select name="fournee" data-fournee></select>
+            </label>
+            <label class="champ"><span>Name on the bag</span>
+              <input name="nom" type="text" autocomplete="name" required>
+            </label>
+            <label class="champ"><span>Phone</span>
+              <input name="tel" type="tel" autocomplete="tel" inputmode="tel" required>
+            </label>
+          </fieldset>
+
+          <div class="commande__ticket">
+            <div class="ticket-ombre">
+              <div class="ticket" id="ticket" data-ticket>
+                <p class="ticket__entete">BOULANGERIE DELCOURT</p>
+                <p class="ticket__adresse">12 RUE DU FOUR-A-PAIN<br>62630 ETAPLES<br>TEL 03 53 01 47 91</p>
+                <p class="ticket__date" data-ticket-date></p>
+                <hr>
+                <ul class="ticket__lignes" data-ticket-lignes></ul>
+                <p class="ticket__vide" data-ticket-vide>Your ticket prints here as you choose.</p>
+                <hr>
+                <p class="ticket__total"><span>TOTAL</span><strong data-total>€0.00</strong></p>
+                <p class="ticket__petit">PAY IN THE SHOP</p>
+                <div class="ticket__confirmation" data-confirmation hidden>
+                  <hr>
+                  <p class="ticket__ligne"><span>ORDER</span><strong data-t-numero></strong></p>
+                  <p class="ticket__ligne"><span>FOR</span><strong data-t-nom></strong></p>
+                  <p class="ticket__ligne"><span>PICK-UP</span><strong data-t-retrait></strong></p>
+                  <p class="ticket__merci">THANK YOU! WE KEEP IT WARM FOR YOU.</p>
+                  <span class="ticket__code" aria-hidden="true"></span>
+                  <span class="tampon" aria-hidden="true">Set aside</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="erreur" data-erreur role="alert" hidden></p>
+            <button class="bouton bouton--four bouton--large" type="submit" data-envoyer>Set it aside</button>
+            <button class="bouton bouton--trait bouton--large" type="button" data-nouvelle hidden>New order</button>
+            <p class="note-demo">Demo: nothing is sent. On a real site, the order reaches the bakery by email.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- La vitrine : les annonces du moment -->
+    <section class="vitrine" id="vitrine" aria-labelledby="vitrine-titre">
+      <div class="contenu">
+        <h2 id="vitrine-titre" class="titre">In the window</h2>
+        <ul class="affiches">
+          <li class="affiche">
+            <p class="affiche__date"><small>Since</small> <span>Oct 15</span></p>
+            <h3 class="affiche__titre">Walnut bread is back</h3>
+            <p>Whole walnuts and rye sourdough, until the end of winter.</p>
+          </li>
+          <li class="affiche">
+            <p class="affiche__date"><small>Order by</small> <span>Dec 20</span></p>
+            <h3 class="affiche__titre">Christmas logs</h3>
+            <p>Chestnut and vanilla, or dark chocolate, six or eight slices. Order <a href="cakes.html#bon">online</a>, by phone or in the shop.</p>
+          </li>
+          <li class="affiche">
+            <p class="affiche__date"><small>From</small> <span>Jan 2</span></p>
+            <h3 class="affiche__titre">Galettes des rois</h3>
+            <p>Butter frangipane, paper crown included. On December 24 we close at 4 pm; closed on the 25th and the 1st.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Venir -->
+    <section class="venir" id="venir" aria-labelledby="venir-titre">
+      <div class="contenu venir__grille">
+        <div class="venir__adresse">
+          <h2 id="venir-titre" class="titre">12 rue du <span class="insecable">Four-à-Pain</span>, Étaples</h2>
+          <p class="chapo">On the way to the harbour, two minutes on foot from the quay car park.</p>
+          <a class="numero" href="tel:+33353014791"><span class="visuellement-cache">Call</span> +33&nbsp;3&nbsp;53&nbsp;01&nbsp;47&nbsp;91</a>
+          <div class="actions">
+            <a class="bouton bouton--encre" href="https://www.google.com/maps/dir/?api=1&amp;destination=%C3%89taples%2062630" target="_blank" rel="noopener"><span>Directions</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a>
+            <button class="bouton bouton--trait" type="button" data-plan>Show the map</button>
+          </div>
+          <p class="note" data-plan-note>The Google map only loads if you ask for it.</p>
+          <div class="plan" data-plan-zone hidden></div>
+        </div>
+
+        <table class="horaires">
+          <caption class="horaires__titre">Opening hours</caption>
+          <tbody>
+            <tr data-jour="1"><th scope="row">Monday</th><td>6:45&nbsp;am – 7:30&nbsp;pm</td></tr>
+            <tr data-jour="2"><th scope="row">Tuesday</th><td>6:45&nbsp;am – 7:30&nbsp;pm</td></tr>
+            <tr data-jour="3" class="horaires__ferme"><th scope="row">Wednesday</th><td>Closed</td></tr>
+            <tr data-jour="4"><th scope="row">Thursday</th><td>6:45&nbsp;am – 7:30&nbsp;pm</td></tr>
+            <tr data-jour="5"><th scope="row">Friday</th><td>6:45&nbsp;am – 7:30&nbsp;pm</td></tr>
+            <tr data-jour="6"><th scope="row">Saturday</th><td>6:45&nbsp;am – 7&nbsp;pm</td></tr>
+            <tr data-jour="0"><th scope="row">Sunday</th><td>7&nbsp;am – 12:30&nbsp;pm</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <p class="pied__enseigne" aria-hidden="true">Delcourt</p>
+    <svg class="baguette pied__baguette" viewBox="0 0 600 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <use class="baguette__corps" href="#baguette-corps"/>
+      <path class="baguette__grigne" style="--i:0" d="M84 58Q99.6 28.8 132 22Q116.4 51.2 84 58Z"/>
+      <path class="baguette__grigne" style="--i:1" d="M148 58Q163.6 28.8 196 22Q180.4 51.2 148 58Z"/>
+      <path class="baguette__grigne" style="--i:2" d="M212 58Q227.6 28.8 260 22Q244.4 51.2 212 58Z"/>
+      <path class="baguette__grigne" style="--i:3" d="M276 58Q291.6 28.8 324 22Q308.4 51.2 276 58Z"/>
+      <path class="baguette__grigne" style="--i:4" d="M340 58Q355.6 28.8 388 22Q372.4 51.2 340 58Z"/>
+      <path class="baguette__grigne" style="--i:5" d="M404 58Q419.6 28.8 452 22Q436.4 51.2 404 58Z"/>
+      <path class="baguette__grigne" style="--i:6" d="M468 58Q483.6 28.8 516 22Q500.4 51.2 468 58Z"/>
+    </svg>
+    <nav class="pied__nav" id="pages" aria-label="Site pages, footer">
+      <a href="#haut" aria-current="page">Home</a>
+      <a href="bread.html">Our bread</a>
+      <a href="cakes.html">Cakes</a>
+      <a href="#reserver">Reserve</a>
+      <a href="#venir">Visit</a>
+      <a href="../index.html" hreflang="fr" lang="fr">Français</a>
+    </nav>
+    <div class="pied__texte">
+      <p>Boulangerie Delcourt · 12 rue du Four-à-Pain, 62630 Étaples, France</p>
+      <p>Fictional business, made to show what a Premium site looks like. <a href="https://moreaudigital.fr/">Moreau Digital</a></p>
+      <p class="pied__credits">Photos on Unsplash: Skyler Ewing, Gaëlle Marcel, Santesson, Tetiana Padurets, Sobalc, The Now Time, NS Doyle, Tunnuz, Mae Mu, Pic of Tasty. Bread and cake drawings: Moreau Digital.</p>
+    </div>
+  </footer>
+
+  <!-- Le menu sort de la barre du bas comme un sachet de boulangerie -->
+  <dialog class="sachet" id="menu" aria-labelledby="menu-titre">
+    <div class="sachet__papier">
+      <div class="sachet__tete">
+        <p class="sachet__enseigne" id="menu-titre">Delcourt</p>
+        <button class="sachet__fermer" type="button" data-fermer aria-label="Close the menu"><svg class="icone" aria-hidden="true"><use href="#i-fermer"/></svg></button>
+      </div>
+      <svg class="baguette sachet__baguette" viewBox="0 0 600 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <use class="baguette__corps" href="#baguette-corps"/>
+        <path class="baguette__grigne" style="--i:0" d="M84 58Q99.6 28.8 132 22Q116.4 51.2 84 58Z"/>
+        <path class="baguette__grigne" style="--i:1" d="M148 58Q163.6 28.8 196 22Q180.4 51.2 148 58Z"/>
+        <path class="baguette__grigne" style="--i:2" d="M212 58Q227.6 28.8 260 22Q244.4 51.2 212 58Z"/>
+        <path class="baguette__grigne" style="--i:3" d="M276 58Q291.6 28.8 324 22Q308.4 51.2 276 58Z"/>
+        <path class="baguette__grigne" style="--i:4" d="M340 58Q355.6 28.8 388 22Q372.4 51.2 340 58Z"/>
+        <path class="baguette__grigne" style="--i:5" d="M404 58Q419.6 28.8 452 22Q436.4 51.2 404 58Z"/>
+        <path class="baguette__grigne" style="--i:6" d="M468 58Q483.6 28.8 516 22Q500.4 51.2 468 58Z"/>
+      </svg>
+      <ul class="sachet__liste">
+        <li><a href="index.html" aria-current="page"><span class="sachet__page">Home</span><span class="sachet__quoi">The bakehouse, right now</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="#nuit"><span class="sachet__page">A night at the bakery</span><span class="sachet__quoi">From 10&nbsp;pm to opening time</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="bread.html"><span class="sachet__page">Our bread</span><span class="sachet__quoi">Today’s special, and all the rest</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="cakes.html"><span class="sachet__page">Cakes</span><span class="sachet__quoi">To order, for your celebrations</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="#reserver"><span class="sachet__page">Reserve</span><span class="sachet__quoi">Your bread set aside</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="#venir"><span class="sachet__page">Visit</span><span class="sachet__quoi">Address, hours, map</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+      </ul>
+      <p class="sachet__pied"><a class="bouton bouton--encre" href="../index.html" hreflang="fr" lang="fr">Version française</a><a class="bouton bouton--trait" href="tel:+33353014791"><svg class="icone" aria-hidden="true"><use href="#i-tel"/></svg>+33&nbsp;3&nbsp;53&nbsp;01&nbsp;47&nbsp;91</a></p>
+    </div>
+  </dialog>
+
+  <nav class="dock" aria-label="Quick actions">
+    <a class="dock__lien dock__lien--carre" href="tel:+33353014791"><svg class="icone" aria-hidden="true"><use href="#i-tel"/></svg><span class="visuellement-cache">Call the bakery</span></a>
+    <a class="dock__lien dock__lien--four" href="#reserver" data-dock-reserver>Reserve my bread</a>
+    <a class="dock__lien dock__lien--carre" href="#pages" data-menu><svg class="icone" aria-hidden="true"><use href="#i-menu"/></svg><span class="visuellement-cache">Menu</span></a>
+  </nav>
+</body>
+</html>

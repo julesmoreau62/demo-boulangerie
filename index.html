@@ -8,6 +8,8 @@
   <!-- Démo : commerce fictif, à ne pas indexer -->
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#f4ecdf">
+  <link rel="alternate" hreflang="fr" href="https://julesmoreau62.github.io/demo-boulangerie/">
+  <link rel="alternate" hreflang="en" href="https://julesmoreau62.github.io/demo-boulangerie/en/">
   <link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="style.css">
@@ -30,16 +32,12 @@
     "@context": "https://schema.org",
     "@type": "Bakery",
     "name": "Boulangerie Delcourt",
-    "description": "Boulangerie-pâtisserie. Pain au levain pétri la nuit et cuit sur sole, viennoiseries pur beurre, tarte au sucre. Réservation en ligne.",
+    "description": "Boulangerie-pâtisserie. Pain au levain pétri la nuit et cuit sur sole, viennoiseries pur beurre, tarte au sucre. Réservation en ligne, gâteaux sur commande.",
+    "url": "https://julesmoreau62.github.io/demo-boulangerie/",
+    "hasMenu": "https://julesmoreau62.github.io/demo-boulangerie/pains.html",
     "telephone": "+33353014791",
     "priceRange": "€",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "12 rue du Four-à-Pain",
-      "postalCode": "62630",
-      "addressLocality": "Étaples",
-      "addressCountry": "FR"
-    },
+    "address": { "@type": "PostalAddress", "streetAddress": "12 rue du Four-à-Pain", "postalCode": "62630", "addressLocality": "Étaples", "addressCountry": "FR" },
     "openingHoursSpecification": [
       { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Thursday", "Friday"], "opens": "06:45", "closes": "19:30" },
       { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "06:45", "closes": "19:00" },
@@ -64,20 +62,23 @@
     <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
     <symbol id="i-fleche" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
     <symbol id="i-bas" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6.5h16M4 12h16M4 17.5h16" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol>
+    <symbol id="i-fermer" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol>
   </svg>
 
-  <p class="bandeau-demo"><span data-en="Demo · fictional business, made by">Démo · commerce fictif, réalisé par</span> <a href="https://moreaudigital.fr/">Moreau Digital</a> <span data-en="· Premium plan">· formule Premium</span></p>
+  <p class="bandeau-demo">Démo · commerce fictif, réalisé par <a href="https://moreaudigital.fr/">Moreau Digital</a> · formule Premium</p>
 
   <header class="barre">
-    <a class="barre__marque" href="#haut"><svg aria-hidden="true"><use href="#marque"/></svg><span class="visuellement-cache" data-en="Delcourt, back to top">Delcourt, haut de page</span></a>
-    <nav class="barre__nav" aria-label="Sections" data-en-label="Sections">
-      <a href="#nuit" data-en="The night">La nuit</a>
-      <a href="#fournees" data-en="Batches">Fournées</a>
-      <a href="#reserver" data-en="Reserve">Réserver</a>
-      <a href="#venir" data-en="Visit">Venir</a>
+    <a class="barre__marque" href="#haut"><svg aria-hidden="true"><use href="#marque"/></svg><span class="visuellement-cache">Delcourt, haut de page</span></a>
+    <nav class="barre__nav" aria-label="Pages du site">
+      <a href="#nuit">La nuit</a>
+      <a href="pains.html">Nos pains</a>
+      <a href="gateaux.html">Gâteaux</a>
+      <a href="#reserver">Réserver</a>
+      <a href="#venir">Venir</a>
     </nav>
     <p class="etat" data-etat hidden><span class="etat__point" aria-hidden="true"></span><span data-etat-texte></span></p>
-    <button class="langue" type="button" data-langue aria-label="Switch to English" lang="en">EN</button>
+    <a class="langue" href="en/index.html" hreflang="en" lang="en" aria-label="English version">EN</a>
   </header>
 
   <main id="haut">
@@ -96,7 +97,7 @@
           <path class="baguette__grigne" style="--i:5" d="M404 58Q419.6 28.8 452 22Q436.4 51.2 404 58Z"/>
           <path class="baguette__grigne" style="--i:6" d="M468 58Q483.6 28.8 516 22Q500.4 51.2 468 58Z"/>
         </svg>
-        <span class="enseigne__metier" data-en="Artisan baker in Étaples">Artisan boulanger à Étaples</span>
+        <span class="enseigne__metier">Artisan boulanger à Étaples</span>
       </h1>
 
       <div class="maintenant__scene">
@@ -110,8 +111,8 @@
       <div class="maintenant__mots">
         <p class="maintenant__phrase" data-phrase>Le pain sort du four à 6&nbsp;h&nbsp;45, 11&nbsp;h&nbsp;30 et 17&nbsp;h. Antoine le prépare la nuit.</p>
         <div class="actions">
-          <a class="bouton bouton--four" href="#reserver" data-en="Reserve my bread">Réserver mon pain</a>
-          <a class="bouton bouton--trait" href="#nuit"><span data-en="A night at the bakery">Une nuit au fournil</span><svg class="icone" aria-hidden="true"><use href="#i-bas"/></svg></a>
+          <a class="bouton bouton--four" href="#reserver">Réserver mon pain</a>
+          <a class="bouton bouton--trait" href="#nuit"><span>Une nuit au fournil</span><svg class="icone" aria-hidden="true"><use href="#i-bas"/></svg></a>
         </div>
       </div>
     </section>
@@ -119,8 +120,8 @@
     <!-- La nuit : de 22 h à l'ouverture. Au défilement, l'horloge avance et le ciel s'éclaircit. -->
     <section class="nuit" id="nuit" aria-labelledby="nuit-titre" data-nuit>
       <div class="nuit__intro">
-        <h2 id="nuit-titre" class="titre" data-en="From 10 pm until opening time, Antoine is alone at the bakery.">De 22&nbsp;h à l’ouverture, Antoine est seul au fournil.</h2>
-        <p class="chapo" data-en="Scroll down: the clock moves with you, from the starter to the first batch.">Faites défiler&nbsp;: l’horloge avance avec vous, du levain jusqu’à la première fournée.</p>
+        <h2 id="nuit-titre" class="titre">De 22&nbsp;h à l’ouverture, Antoine est seul au fournil.</h2>
+        <p class="chapo">Faites défiler&nbsp;: l’horloge avance avec vous, du levain jusqu’à la première fournée.</p>
       </div>
 
       <div class="nuit__piste" data-piste>
@@ -143,61 +144,61 @@
               <span class="hublot etape__hublot"><img src="photos/rond-levain-480.webp" srcset="photos/rond-levain-480.webp 480w, photos/rond-levain-800.webp 800w" sizes="(min-width: 900px) 42vw, 70vw" width="480" height="480" loading="lazy" alt="Une main laisse tomber du levain dans un saladier en verre"></span>
               <div class="etape__mots">
                 <p class="etape__heure">22&nbsp;h</p>
-                <h3 class="etape__titre" data-en="The starter">Le levain</h3>
-                <p class="etape__texte" data-en="Antoine feeds the sourdough starter with rye flour and warm water. It is twenty years old and was born in this bakehouse.">Antoine nourrit le levain avec de la farine de seigle et de l’eau tiède. Il a vingt ans, il est né dans ce fournil.</p>
+                <h3 class="etape__titre">Le levain</h3>
+                <p class="etape__texte">Antoine nourrit le levain avec de la farine de seigle et de l’eau tiède. Il a vingt ans, il est né dans ce fournil.</p>
               </div>
             </li>
             <li class="etape" data-t="90">
               <span class="hublot etape__hublot"><img src="photos/rond-petrissage-480.webp" srcset="photos/rond-petrissage-480.webp 480w, photos/rond-petrissage-800.webp 800w" sizes="(min-width: 900px) 42vw, 70vw" width="480" height="480" loading="lazy" alt="Deux mains pétrissent une boule de pâte sur un plan fariné"></span>
               <div class="etape__mots">
                 <p class="etape__heure">23&nbsp;h&nbsp;30</p>
-                <h3 class="etape__titre" data-en="Mixing">Le pétrissage</h3>
-                <p class="etape__texte" data-en="Flour from a mill forty kilometres away, water, salt, starter. The mixer turns slowly so the dough stays cool, then the dough rests until 2 am.">Farine d’un moulin à quarante kilomètres, eau, sel, levain. Le pétrin tourne lentement pour ne pas chauffer la pâte, qui repose ensuite jusqu’à 2&nbsp;h.</p>
+                <h3 class="etape__titre">Le pétrissage</h3>
+                <p class="etape__texte">Farine d’un moulin à quarante kilomètres, eau, sel, levain. Le pétrin tourne lentement pour ne pas chauffer la pâte, qui repose ensuite jusqu’à 2&nbsp;h.</p>
               </div>
             </li>
             <li class="etape" data-t="270">
               <span class="hublot etape__hublot"><img src="photos/rond-faconnage-480.webp" srcset="photos/rond-faconnage-480.webp 480w, photos/rond-faconnage-534.webp 534w" sizes="(min-width: 900px) 42vw, 70vw" width="480" height="480" loading="lazy" alt="Un boulanger façonne des baguettes alignées sur une plaque"></span>
               <div class="etape__mots">
                 <p class="etape__heure">2&nbsp;h&nbsp;30</p>
-                <h3 class="etape__titre" data-en="Shaping">Le façonnage</h3>
-                <p class="etape__texte" data-en="Four hundred baguettes, rolled by hand one at a time, then laid in the folds of a linen cloth.">Quatre cents baguettes, roulées à la main une par une, puis couchées dans les plis d’une toile de lin.</p>
+                <h3 class="etape__titre">Le façonnage</h3>
+                <p class="etape__texte">Quatre cents baguettes, roulées à la main une par une, puis couchées dans les plis d’une toile de lin.</p>
               </div>
             </li>
             <li class="etape" data-t="375">
               <span class="hublot etape__hublot"><img src="photos/rond-lame-480.webp" srcset="photos/rond-lame-480.webp 480w, photos/rond-lame-800.webp 800w" sizes="(min-width: 900px) 42vw, 70vw" width="480" height="480" loading="lazy" alt="Un nuage de farine tombe des mains du boulanger sur une miche"></span>
               <div class="etape__mots">
                 <p class="etape__heure">4&nbsp;h&nbsp;15</p>
-                <h3 class="etape__titre" data-en="The blade">Le coup de lame</h3>
-                <p class="etape__texte" data-en="A veil of flour, then five cuts on each baguette. In the oven they will open up into ears: the grigne.">Un voile de farine, puis cinq entailles sur chaque baguette. Dans le four, elles s’ouvriront en oreilles&nbsp;: c’est la grigne.</p>
+                <h3 class="etape__titre">Le coup de lame</h3>
+                <p class="etape__texte">Un voile de farine, puis cinq entailles sur chaque baguette. Dans le four, elles s’ouvriront en oreilles&nbsp;: c’est la grigne.</p>
               </div>
             </li>
             <li class="etape etape--four" data-t="420">
-              <span class="hublot etape__hublot" role="img" aria-label="La porte vitrée du four, rouge de chaleur" data-en-label="The oven window, glowing red"><span class="feu"></span></span>
+              <span class="hublot etape__hublot" role="img" aria-label="La porte vitrée du four, rouge de chaleur"><span class="feu"></span></span>
               <div class="etape__mots">
                 <p class="etape__heure">5&nbsp;h</p>
-                <h3 class="etape__titre" data-en="Into the oven">Au four</h3>
-                <p class="etape__texte" data-en="A stone-deck oven at 250 °C, twenty-two minutes for a baguette. Outside, the street already smells of bread.">Un four à sole à 250&nbsp;°C, vingt-deux minutes pour une baguette. Dehors, la rue sent déjà le pain.</p>
+                <h3 class="etape__titre">Au four</h3>
+                <p class="etape__texte">Un four à sole à 250&nbsp;°C, vingt-deux minutes pour une baguette. Dehors, la rue sent déjà le pain.</p>
               </div>
             </li>
             <li class="etape etape--couleur" data-t="465">
               <span class="hublot etape__hublot"><img src="photos/rond-defournement-480.webp" srcset="photos/rond-defournement-480.webp 480w, photos/rond-defournement-800.webp 800w" sizes="(min-width: 900px) 42vw, 70vw" width="480" height="480" loading="lazy" alt="Des miches tout juste cuites refroidissent sur un chariot à grilles"></span>
               <div class="etape__mots">
                 <p class="etape__heure">5&nbsp;h&nbsp;45</p>
-                <h3 class="etape__titre" data-en="Out of the oven">Le défournement</h3>
-                <p class="etape__texte" data-en="The bread sings as it cools: the crust crackles. It only goes into a bag once it is warm, not hot.">Le pain chante en refroidissant&nbsp;: la croûte craque. On ne le met en sachet qu’une fois tiède.</p>
+                <h3 class="etape__titre">Le défournement</h3>
+                <p class="etape__texte">Le pain chante en refroidissant&nbsp;: la croûte craque. On ne le met en sachet qu’une fois tiède.</p>
               </div>
             </li>
             <li class="etape etape--couleur" data-t="525">
               <span class="hublot etape__hublot"><img src="photos/rond-ouverture-480.webp" srcset="photos/rond-ouverture-480.webp 480w, photos/rond-ouverture-800.webp 800w" sizes="(min-width: 900px) 42vw, 70vw" width="480" height="480" loading="lazy" alt="L’enseigne dorée « Boulangerie » au-dessus de la vitrine"></span>
               <div class="etape__mots">
                 <p class="etape__heure">6&nbsp;h&nbsp;45</p>
-                <h3 class="etape__titre" data-en="We open">On ouvre</h3>
-                <p class="etape__texte" data-en="Claire raises the shutter. First batch: baguettes, country loaves, croissants and pains au chocolat.">Claire lève le rideau. Première fournée&nbsp;: baguettes, pains de campagne, croissants et pains au chocolat.</p>
+                <h3 class="etape__titre">On ouvre</h3>
+                <p class="etape__texte">Claire lève le rideau. Première fournée&nbsp;: baguettes, pains de campagne, croissants et pains au chocolat.</p>
               </div>
             </li>
           </ol>
 
-          <p class="nuit__indice" aria-hidden="true"><span data-en="Scroll">Faites défiler</span><svg class="icone" aria-hidden="true"><use href="#i-bas"/></svg></p>
+          <p class="nuit__indice" aria-hidden="true"><span>Faites défiler</span><svg class="icone" aria-hidden="true"><use href="#i-bas"/></svg></p>
         </div>
       </div>
     </section>
@@ -205,14 +206,15 @@
     <!-- Les fournées du jour : rempli en direct par app.js -->
     <section class="fournees" id="fournees" aria-labelledby="fournees-titre">
       <div class="contenu">
-        <h2 id="fournees-titre" class="titre" data-en="Bread comes out of the oven three times a day.">Le pain sort du four trois fois par jour.</h2>
-        <p class="chapo" data-tableau-jour data-en="Monday to Saturday, closed on Wednesdays.">Du lundi au samedi, sauf le mercredi.</p>
+        <h2 id="fournees-titre" class="titre">Le pain sort du four trois fois par jour.</h2>
+        <p class="chapo" data-tableau-jour>Du lundi au samedi, sauf le mercredi.</p>
         <ol class="tableau" data-tableau>
           <li class="tableau__ligne"><span class="tableau__heure">6<span class="tableau__h">h</span>45</span><span class="tableau__quoi">Baguettes, pains de campagne, croissants et pains au chocolat</span></li>
           <li class="tableau__ligne"><span class="tableau__heure">11<span class="tableau__h">h</span>30</span><span class="tableau__quoi">Tradition et ficelles, pour les sandwichs du midi</span></li>
           <li class="tableau__ligne"><span class="tableau__heure">17<span class="tableau__h">h</span>00</span><span class="tableau__quoi">Tradition, pain du soir et tarte au sucre encore tiède</span></li>
         </ol>
-        <p class="note" data-en="On Sundays, two batches: 7 am and 10 am.">Le dimanche, deux fournées&nbsp;: 7&nbsp;h et 10&nbsp;h.</p>
+        <p class="note">Le dimanche, deux fournées&nbsp;: 7&nbsp;h et 10&nbsp;h.</p>
+        <a class="lien-fleche" href="pains.html">Le pain du jour et toute la carte<svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a>
       </div>
     </section>
 
@@ -220,64 +222,64 @@
     <section class="reserver" id="reserver" aria-labelledby="reserver-titre">
       <div class="contenu reserver__grille">
         <div class="reserver__tete">
-          <h2 id="reserver-titre" class="titre" data-en="Your bread, set aside under your name.">Votre pain, mis de côté à votre nom.</h2>
-          <p class="chapo" data-en="Choose, then pick it up at the batch that suits you. You pay in the shop.">Choisissez, puis passez le prendre à la fournée qui vous arrange. Vous payez en boutique.</p>
+          <h2 id="reserver-titre" class="titre">Votre pain, mis de côté à votre nom.</h2>
+          <p class="chapo">Choisissez, puis passez le prendre à la fournée qui vous arrange. Vous payez en boutique.</p>
         </div>
 
         <form class="commande" data-commande novalidate>
           <fieldset class="commande__choix" data-choix>
-            <legend class="visuellement-cache" data-en="Products">Produits</legend>
+            <legend class="visuellement-cache">Produits</legend>
             <ul class="produits">
               <li class="produit" data-id="tradition" data-prix="1.30">
-                <p class="produit__nom" data-en="Traditional baguette">Baguette tradition</p>
-                <p class="produit__detail"><span class="produit__prix" data-prix-texte>1,30&nbsp;€</span> <span data-en="· thin crust, creamy crumb">· croûte fine, mie crème</span></p>
-                <div class="pas"><button type="button" data-moins aria-label="Retirer une baguette tradition" data-en-label="Remove a traditional baguette">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Ajouter une baguette tradition" data-en-label="Add a traditional baguette">+</button></div>
+                <p class="produit__nom">Baguette tradition</p>
+                <p class="produit__detail"><span class="produit__prix" data-prix-texte>1,30&nbsp;€</span> <span>· croûte fine, mie crème</span></p>
+                <div class="pas"><button type="button" data-moins aria-label="Retirer une baguette tradition">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Ajouter une baguette tradition">+</button></div>
               </li>
               <li class="produit" data-id="campagne" data-prix="4.60">
-                <p class="produit__nom" data-en="Sourdough country loaf, 800 g">Pain de campagne, 800&nbsp;g</p>
-                <p class="produit__detail"><span class="produit__prix" data-prix-texte>4,60&nbsp;€</span> <span data-en="· sourdough, keeps four days">· au levain, se garde quatre jours</span></p>
-                <div class="pas"><button type="button" data-moins aria-label="Retirer un pain de campagne" data-en-label="Remove a country loaf">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Ajouter un pain de campagne" data-en-label="Add a country loaf">+</button></div>
+                <p class="produit__nom">Pain de campagne, 800&nbsp;g</p>
+                <p class="produit__detail"><span class="produit__prix" data-prix-texte>4,60&nbsp;€</span> <span>· au levain, se garde quatre jours</span></p>
+                <div class="pas"><button type="button" data-moins aria-label="Retirer un pain de campagne">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Ajouter un pain de campagne">+</button></div>
               </li>
               <li class="produit" data-id="cereales" data-prix="3.90">
-                <p class="produit__nom" data-en="Seeded loaf">Pain aux céréales</p>
-                <p class="produit__detail"><span class="produit__prix" data-prix-texte>3,90&nbsp;€</span> <span data-en="· flax, sunflower, sesame, poppy">· lin, tournesol, sésame, pavot</span></p>
-                <div class="pas"><button type="button" data-moins aria-label="Retirer un pain aux céréales" data-en-label="Remove a seeded loaf">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Ajouter un pain aux céréales" data-en-label="Add a seeded loaf">+</button></div>
+                <p class="produit__nom">Pain aux céréales</p>
+                <p class="produit__detail"><span class="produit__prix" data-prix-texte>3,90&nbsp;€</span> <span>· lin, tournesol, sésame, pavot</span></p>
+                <div class="pas"><button type="button" data-moins aria-label="Retirer un pain aux céréales">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Ajouter un pain aux céréales">+</button></div>
               </li>
               <li class="produit" data-id="croissant" data-prix="1.25">
-                <p class="produit__nom" data-en="Butter croissant">Croissant pur beurre</p>
-                <p class="produit__detail"><span class="produit__prix" data-prix-texte>1,25&nbsp;€</span> <span data-en="· Charentes butter">· beurre des Charentes</span></p>
-                <div class="pas"><button type="button" data-moins aria-label="Retirer un croissant" data-en-label="Remove a croissant">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Ajouter un croissant" data-en-label="Add a croissant">+</button></div>
+                <p class="produit__nom">Croissant pur beurre</p>
+                <p class="produit__detail"><span class="produit__prix" data-prix-texte>1,25&nbsp;€</span> <span>· beurre des Charentes</span></p>
+                <div class="pas"><button type="button" data-moins aria-label="Retirer un croissant">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Ajouter un croissant">+</button></div>
               </li>
               <li class="produit" data-id="chocolat" data-prix="1.45">
                 <p class="produit__nom">Pain au chocolat</p>
-                <p class="produit__detail"><span class="produit__prix" data-prix-texte>1,45&nbsp;€</span> <span data-en="· two dark chocolate sticks">· deux barres de chocolat noir</span></p>
-                <div class="pas"><button type="button" data-moins aria-label="Retirer un pain au chocolat" data-en-label="Remove a pain au chocolat">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Ajouter un pain au chocolat" data-en-label="Add a pain au chocolat">+</button></div>
+                <p class="produit__detail"><span class="produit__prix" data-prix-texte>1,45&nbsp;€</span> <span>· deux barres de chocolat noir</span></p>
+                <div class="pas"><button type="button" data-moins aria-label="Retirer un pain au chocolat">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Ajouter un pain au chocolat">+</button></div>
               </li>
               <li class="produit" data-id="cramique" data-prix="6.50">
-                <p class="produit__nom" data-en="Cramique, raisin brioche">Cramique aux raisins</p>
-                <p class="produit__detail"><span class="produit__prix" data-prix-texte>6,50&nbsp;€</span> <span data-en="· the northern Sunday brioche">· la brioche du Nord, pour le dimanche</span></p>
-                <div class="pas"><button type="button" data-moins aria-label="Retirer une cramique" data-en-label="Remove a cramique">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Ajouter une cramique" data-en-label="Add a cramique">+</button></div>
+                <p class="produit__nom">Cramique aux raisins</p>
+                <p class="produit__detail"><span class="produit__prix" data-prix-texte>6,50&nbsp;€</span> <span>· la brioche du Nord, pour le dimanche</span></p>
+                <div class="pas"><button type="button" data-moins aria-label="Retirer une cramique">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Ajouter une cramique">+</button></div>
               </li>
               <li class="produit" data-id="tarte" data-prix="9.50">
-                <p class="produit__nom" data-en="Sugar tart, serves 6">Tarte au sucre, 6&nbsp;parts</p>
-                <p class="produit__detail"><span class="produit__prix" data-prix-texte>9,50&nbsp;€</span> <span data-en="· brown sugar, butter, cream">· cassonade, beurre, crème</span></p>
-                <div class="pas"><button type="button" data-moins aria-label="Retirer une tarte au sucre" data-en-label="Remove a sugar tart">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Ajouter une tarte au sucre" data-en-label="Add a sugar tart">+</button></div>
+                <p class="produit__nom">Tarte au sucre, 6&nbsp;parts</p>
+                <p class="produit__detail"><span class="produit__prix" data-prix-texte>9,50&nbsp;€</span> <span>· cassonade, beurre, crème</span></p>
+                <div class="pas"><button type="button" data-moins aria-label="Retirer une tarte au sucre">−</button><output data-qte>0</output><button type="button" data-plus aria-label="Ajouter une tarte au sucre">+</button></div>
               </li>
             </ul>
           </fieldset>
 
           <fieldset class="retrait" data-retrait>
-            <legend class="retrait__titre" data-en="Pick-up">Retrait</legend>
-            <label class="champ"><span data-en="Day">Jour</span>
+            <legend class="retrait__titre">Retrait</legend>
+            <label class="champ"><span>Jour</span>
               <select name="jour" data-jour></select>
             </label>
-            <label class="champ"><span data-en="Batch">Fournée</span>
+            <label class="champ"><span>Fournée</span>
               <select name="fournee" data-fournee></select>
             </label>
-            <label class="champ"><span data-en="Name on the bag">Nom sur le sachet</span>
+            <label class="champ"><span>Nom sur le sachet</span>
               <input name="nom" type="text" autocomplete="name" required>
             </label>
-            <label class="champ"><span data-en="Phone">Téléphone</span>
+            <label class="champ"><span>Téléphone</span>
               <input name="tel" type="tel" autocomplete="tel" inputmode="tel" required>
             </label>
           </fieldset>
@@ -290,26 +292,26 @@
                 <p class="ticket__date" data-ticket-date></p>
                 <hr>
                 <ul class="ticket__lignes" data-ticket-lignes></ul>
-                <p class="ticket__vide" data-ticket-vide data-en="Your ticket prints here as you choose.">Votre ticket s’imprime ici, au fil de vos choix.</p>
+                <p class="ticket__vide" data-ticket-vide>Votre ticket s’imprime ici, au fil de vos choix.</p>
                 <hr>
                 <p class="ticket__total"><span>TOTAL</span><strong data-total>0,00&nbsp;€</strong></p>
-                <p class="ticket__petit" data-en="PAY IN THE SHOP">À RÉGLER EN BOUTIQUE</p>
+                <p class="ticket__petit">À RÉGLER EN BOUTIQUE</p>
                 <div class="ticket__confirmation" data-confirmation hidden>
                   <hr>
-                  <p class="ticket__ligne"><span data-en="ORDER">COMMANDE</span><strong data-t-numero></strong></p>
-                  <p class="ticket__ligne"><span data-en="FOR">POUR</span><strong data-t-nom></strong></p>
-                  <p class="ticket__ligne"><span data-en="PICK-UP">RETRAIT</span><strong data-t-retrait></strong></p>
-                  <p class="ticket__merci" data-en="THANK YOU! WE KEEP IT WARM FOR YOU.">MERCI ! ON VOUS LE GARDE AU CHAUD.</p>
+                  <p class="ticket__ligne"><span>COMMANDE</span><strong data-t-numero></strong></p>
+                  <p class="ticket__ligne"><span>POUR</span><strong data-t-nom></strong></p>
+                  <p class="ticket__ligne"><span>RETRAIT</span><strong data-t-retrait></strong></p>
+                  <p class="ticket__merci">MERCI ! ON VOUS LE GARDE AU CHAUD.</p>
                   <span class="ticket__code" aria-hidden="true"></span>
-                  <span class="tampon" aria-hidden="true" data-en="Set aside">Mis de côté</span>
+                  <span class="tampon" aria-hidden="true">Mis de côté</span>
                 </div>
               </div>
             </div>
 
             <p class="erreur" data-erreur role="alert" hidden></p>
-            <button class="bouton bouton--four bouton--large" type="submit" data-envoyer data-en="Set it aside">Mettre de côté</button>
-            <button class="bouton bouton--trait bouton--large" type="button" data-nouvelle hidden data-en="New order">Nouvelle commande</button>
-            <p class="note-demo" data-en="Demo: nothing is sent. On a real site, the order reaches the bakery by email.">Démo&nbsp;: rien n’est envoyé. Sur un vrai site, la commande arrive à la boulangerie par e-mail.</p>
+            <button class="bouton bouton--four bouton--large" type="submit" data-envoyer>Mettre de côté</button>
+            <button class="bouton bouton--trait bouton--large" type="button" data-nouvelle hidden>Nouvelle commande</button>
+            <p class="note-demo">Démo&nbsp;: rien n’est envoyé. Sur un vrai site, la commande arrive à la boulangerie par e-mail.</p>
           </div>
         </form>
       </div>
@@ -318,22 +320,22 @@
     <!-- La vitrine : les annonces du moment -->
     <section class="vitrine" id="vitrine" aria-labelledby="vitrine-titre">
       <div class="contenu">
-        <h2 id="vitrine-titre" class="titre" data-en="In the window">Sur la vitrine</h2>
+        <h2 id="vitrine-titre" class="titre">Sur la vitrine</h2>
         <ul class="affiches">
           <li class="affiche">
-            <p class="affiche__date"><small data-en="Since">Depuis le</small> <span data-en="Oct 15">15 oct.</span></p>
-            <h3 class="affiche__titre" data-en="Walnut bread is back">Le pain aux noix est revenu</h3>
-            <p data-en="Whole walnuts and rye sourdough, until the end of winter.">Noix entières et levain de seigle, jusqu’à la fin de l’hiver.</p>
+            <p class="affiche__date"><small>Depuis le</small> <span>15 oct.</span></p>
+            <h3 class="affiche__titre">Le pain aux noix est revenu</h3>
+            <p>Noix entières et levain de seigle, jusqu’à la fin de l’hiver.</p>
           </li>
           <li class="affiche">
-            <p class="affiche__date"><small data-en="Order by">Avant le</small> <span data-en="Dec 20">20 déc.</span></p>
-            <h3 class="affiche__titre" data-en="Christmas logs">Les bûches de Noël</h3>
-            <p data-en="Chestnut and vanilla, or dark chocolate. Six or eight slices, to order by phone or in the shop.">Marron-vanille ou chocolat noir, six ou huit parts. À commander par téléphone ou en boutique.</p>
+            <p class="affiche__date"><small>Avant le</small> <span>20 déc.</span></p>
+            <h3 class="affiche__titre">Les bûches de Noël</h3>
+            <p>Marron-vanille ou chocolat noir, six ou huit parts. À commander <a href="gateaux.html#bon">en ligne</a>, par téléphone ou en boutique.</p>
           </li>
           <li class="affiche">
-            <p class="affiche__date"><small data-en="From">Dès le</small> <span data-en="Jan 2">2 janv.</span></p>
-            <h3 class="affiche__titre" data-en="Galettes des rois">Les galettes des rois</h3>
-            <p data-en="Butter frangipane, paper crown included. On December 24 we close at 4 pm; closed on the 25th and the 1st.">Frangipane au beurre, couronne offerte. Le 24 décembre, on ferme à 16&nbsp;h&nbsp;; fermé les 25 et 1<sup>er</sup>.</p>
+            <p class="affiche__date"><small>Dès le</small> <span>2 janv.</span></p>
+            <h3 class="affiche__titre">Les galettes des rois</h3>
+            <p>Frangipane au beurre, couronne offerte. Le 24 décembre, on ferme à 16&nbsp;h&nbsp;; fermé les 25 et 1<sup>er</sup>.</p>
           </li>
         </ul>
       </div>
@@ -344,26 +346,26 @@
       <div class="contenu venir__grille">
         <div class="venir__adresse">
           <h2 id="venir-titre" class="titre">12 rue du <span class="insecable">Four-à-Pain</span>, Étaples</h2>
-          <p class="chapo" data-en="On the way to the harbour, two minutes on foot from the quay car park.">Sur le chemin du port, à deux minutes à pied du parking du quai.</p>
-          <a class="numero" href="tel:+33353014791"><span class="visuellement-cache" data-en="Call">Appeler le</span> 03&nbsp;53&nbsp;01&nbsp;47&nbsp;91</a>
+          <p class="chapo">Sur le chemin du port, à deux minutes à pied du parking du quai.</p>
+          <a class="numero" href="tel:+33353014791"><span class="visuellement-cache">Appeler le</span> 03&nbsp;53&nbsp;01&nbsp;47&nbsp;91</a>
           <div class="actions">
-            <a class="bouton bouton--encre" href="https://www.google.com/maps/dir/?api=1&amp;destination=%C3%89taples%2062630" target="_blank" rel="noopener"><span data-en="Directions">Itinéraire</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a>
-            <button class="bouton bouton--trait" type="button" data-plan data-en="Show the map">Afficher le plan</button>
+            <a class="bouton bouton--encre" href="https://www.google.com/maps/dir/?api=1&amp;destination=%C3%89taples%2062630" target="_blank" rel="noopener"><span>Itinéraire</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a>
+            <button class="bouton bouton--trait" type="button" data-plan>Afficher le plan</button>
           </div>
-          <p class="note" data-plan-note data-en="The Google map only loads if you ask for it.">Le plan Google ne se charge que si vous le demandez.</p>
+          <p class="note" data-plan-note>Le plan Google ne se charge que si vous le demandez.</p>
           <div class="plan" data-plan-zone hidden></div>
         </div>
 
         <table class="horaires">
-          <caption class="horaires__titre" data-en="Opening hours">Horaires</caption>
+          <caption class="horaires__titre">Horaires</caption>
           <tbody>
-            <tr data-jour="1"><th scope="row" data-en="Monday">Lundi</th><td>6&nbsp;h&nbsp;45 – 19&nbsp;h&nbsp;30</td></tr>
-            <tr data-jour="2"><th scope="row" data-en="Tuesday">Mardi</th><td>6&nbsp;h&nbsp;45 – 19&nbsp;h&nbsp;30</td></tr>
-            <tr data-jour="3" class="horaires__ferme"><th scope="row" data-en="Wednesday">Mercredi</th><td data-en="Closed">Fermé</td></tr>
-            <tr data-jour="4"><th scope="row" data-en="Thursday">Jeudi</th><td>6&nbsp;h&nbsp;45 – 19&nbsp;h&nbsp;30</td></tr>
-            <tr data-jour="5"><th scope="row" data-en="Friday">Vendredi</th><td>6&nbsp;h&nbsp;45 – 19&nbsp;h&nbsp;30</td></tr>
-            <tr data-jour="6"><th scope="row" data-en="Saturday">Samedi</th><td>6&nbsp;h&nbsp;45 – 19&nbsp;h</td></tr>
-            <tr data-jour="0"><th scope="row" data-en="Sunday">Dimanche</th><td>7&nbsp;h – 12&nbsp;h&nbsp;30</td></tr>
+            <tr data-jour="1"><th scope="row">Lundi</th><td>6&nbsp;h&nbsp;45 – 19&nbsp;h&nbsp;30</td></tr>
+            <tr data-jour="2"><th scope="row">Mardi</th><td>6&nbsp;h&nbsp;45 – 19&nbsp;h&nbsp;30</td></tr>
+            <tr data-jour="3" class="horaires__ferme"><th scope="row">Mercredi</th><td>Fermé</td></tr>
+            <tr data-jour="4"><th scope="row">Jeudi</th><td>6&nbsp;h&nbsp;45 – 19&nbsp;h&nbsp;30</td></tr>
+            <tr data-jour="5"><th scope="row">Vendredi</th><td>6&nbsp;h&nbsp;45 – 19&nbsp;h&nbsp;30</td></tr>
+            <tr data-jour="6"><th scope="row">Samedi</th><td>6&nbsp;h&nbsp;45 – 19&nbsp;h</td></tr>
+            <tr data-jour="0"><th scope="row">Dimanche</th><td>7&nbsp;h – 12&nbsp;h&nbsp;30</td></tr>
           </tbody>
         </table>
       </div>
@@ -382,16 +384,54 @@
       <path class="baguette__grigne" style="--i:5" d="M404 58Q419.6 28.8 452 22Q436.4 51.2 404 58Z"/>
       <path class="baguette__grigne" style="--i:6" d="M468 58Q483.6 28.8 516 22Q500.4 51.2 468 58Z"/>
     </svg>
+    <nav class="pied__nav" id="pages" aria-label="Pages du site, en bas">
+      <a href="#haut" aria-current="page">Accueil</a>
+      <a href="pains.html">Nos pains</a>
+      <a href="gateaux.html">Gâteaux</a>
+      <a href="#reserver">Réserver</a>
+      <a href="#venir">Venir</a>
+      <a href="en/index.html" hreflang="en" lang="en">English</a>
+    </nav>
     <div class="pied__texte">
-      <p data-en="Boulangerie Delcourt · 12 rue du Four-à-Pain, 62630 Étaples">Boulangerie Delcourt · 12 rue du Four-à-Pain, 62630 Étaples</p>
-      <p><span data-en="Fictional business, made to show what a Premium site looks like.">Commerce fictif, créé pour montrer ce que donne un site Premium.</span> <a href="https://moreaudigital.fr/">Moreau Digital</a></p>
-      <p class="pied__credits"><span data-en="Photos on Unsplash:">Photos Unsplash&nbsp;:</span> Skyler Ewing, Gaëlle Marcel, Santesson, Tetiana Padurets, Sobalc, The Now Time, NS Doyle, Tunnuz, Mae Mu, Pic of Tasty.</p>
+      <p>Boulangerie Delcourt · 12 rue du Four-à-Pain, 62630 Étaples</p>
+      <p>Commerce fictif, créé pour montrer ce que donne un site Premium. <a href="https://moreaudigital.fr/">Moreau Digital</a></p>
+      <p class="pied__credits">Photos Unsplash&nbsp;: Skyler Ewing, Gaëlle Marcel, Santesson, Tetiana Padurets, Sobalc, The Now Time, NS Doyle, Tunnuz, Mae Mu, Pic of Tasty. Dessins de pains et de gâteaux&nbsp;: Moreau Digital.</p>
     </div>
   </footer>
 
-  <nav class="dock" aria-label="Actions rapides" data-en-label="Quick actions">
-    <a class="dock__lien" href="tel:+33353014791"><svg class="icone" aria-hidden="true"><use href="#i-tel"/></svg><span data-en="Call">Appeler</span></a>
+  <!-- Le menu sort de la barre du bas comme un sachet de boulangerie -->
+  <dialog class="sachet" id="menu" aria-labelledby="menu-titre">
+    <div class="sachet__papier">
+      <div class="sachet__tete">
+        <p class="sachet__enseigne" id="menu-titre">Delcourt</p>
+        <button class="sachet__fermer" type="button" data-fermer aria-label="Fermer le menu"><svg class="icone" aria-hidden="true"><use href="#i-fermer"/></svg></button>
+      </div>
+      <svg class="baguette sachet__baguette" viewBox="0 0 600 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <use class="baguette__corps" href="#baguette-corps"/>
+        <path class="baguette__grigne" style="--i:0" d="M84 58Q99.6 28.8 132 22Q116.4 51.2 84 58Z"/>
+        <path class="baguette__grigne" style="--i:1" d="M148 58Q163.6 28.8 196 22Q180.4 51.2 148 58Z"/>
+        <path class="baguette__grigne" style="--i:2" d="M212 58Q227.6 28.8 260 22Q244.4 51.2 212 58Z"/>
+        <path class="baguette__grigne" style="--i:3" d="M276 58Q291.6 28.8 324 22Q308.4 51.2 276 58Z"/>
+        <path class="baguette__grigne" style="--i:4" d="M340 58Q355.6 28.8 388 22Q372.4 51.2 340 58Z"/>
+        <path class="baguette__grigne" style="--i:5" d="M404 58Q419.6 28.8 452 22Q436.4 51.2 404 58Z"/>
+        <path class="baguette__grigne" style="--i:6" d="M468 58Q483.6 28.8 516 22Q500.4 51.2 468 58Z"/>
+      </svg>
+      <ul class="sachet__liste">
+        <li><a href="index.html" aria-current="page"><span class="sachet__page">Accueil</span><span class="sachet__quoi">Le fournil, à cette minute</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="#nuit"><span class="sachet__page">La nuit au fournil</span><span class="sachet__quoi">De 22&nbsp;h à l’ouverture</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="pains.html"><span class="sachet__page">Nos pains</span><span class="sachet__quoi">Le pain du jour, et tous les autres</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="gateaux.html"><span class="sachet__page">Gâteaux</span><span class="sachet__quoi">Sur commande, pour vos fêtes</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="#reserver"><span class="sachet__page">Réserver</span><span class="sachet__quoi">Votre pain mis de côté</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="#venir"><span class="sachet__page">Venir</span><span class="sachet__quoi">Adresse, horaires, plan</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+      </ul>
+      <p class="sachet__pied"><a class="bouton bouton--encre" href="en/index.html" hreflang="en" lang="en">English version</a><a class="bouton bouton--trait" href="tel:+33353014791"><svg class="icone" aria-hidden="true"><use href="#i-tel"/></svg>03&nbsp;53&nbsp;01&nbsp;47&nbsp;91</a></p>
+    </div>
+  </dialog>
+
+  <nav class="dock" aria-label="Actions rapides">
+    <a class="dock__lien dock__lien--carre" href="tel:+33353014791"><svg class="icone" aria-hidden="true"><use href="#i-tel"/></svg><span class="visuellement-cache">Appeler la boulangerie</span></a>
     <a class="dock__lien dock__lien--four" href="#reserver" data-dock-reserver>Réserver mon pain</a>
+    <a class="dock__lien dock__lien--carre" href="#pages" data-menu><svg class="icone" aria-hidden="true"><use href="#i-menu"/></svg><span class="visuellement-cache">Menu</span></a>
   </nav>
 </body>
 </html>

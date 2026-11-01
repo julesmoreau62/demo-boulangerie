@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr" data-moment="jour">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Nos pains · Boulangerie Delcourt, Étaples</title>
+  <meta name="description" content="Le pain du jour et toute la carte de la Boulangerie Delcourt à Étaples : baguette tradition, pain de campagne au levain, viennoiseries pur beurre, tarte au sucre. Prix et allergènes.">
+  <!-- Démo : commerce fictif, à ne pas indexer -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f4ecdf">
+  <link rel="alternate" hreflang="fr" href="https://julesmoreau62.github.io/demo-boulangerie/pains.html">
+  <link rel="alternate" hreflang="en" href="https://julesmoreau62.github.io/demo-boulangerie/en/bread.html">
+  <link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    /* Avant le premier affichage : jour ou nuit à Étaples, pour ne pas clignoter. */
+    (function (d) {
+      d.classList.add("js");
+      try {
+        var q = /[?&]heure=(\d{1,2})(?:[:h](\d{2}))?/.exec(location.search);
+        var p = q ? [q[1], q[2] || 0] : new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date()).split(":");
+        var m = +p[0] * 60 + +p[1];
+        d.setAttribute("data-moment", m >= 1200 || m < 390 ? "nuit" : "jour");
+      } catch (e) {}
+    })(document.documentElement);
+  </script>
+  <script src="app.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Menu",
+    "name": "Boulangerie Delcourt",
+    "inLanguage": "fr",
+    "hasMenuSection": [
+      {
+        "@type": "MenuSection",
+        "name": "Le pain du jour",
+        "hasMenuItem": [
+          { "@type": "MenuItem", "name": "Pain de seigle", "offers": {"@type": "Offer", "price": "4.20", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Pain d’épeautre", "offers": {"@type": "Offer", "price": "4.90", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Pain à la bière", "offers": {"@type": "Offer", "price": "4.80", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Pain aux algues", "offers": {"@type": "Offer", "price": "4.60", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Couronne au levain", "offers": {"@type": "Offer", "price": "6.80", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Brioche tressée", "offers": {"@type": "Offer", "price": "7.50", "priceCurrency": "EUR"} }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Tous les jours",
+        "hasMenuItem": [
+          { "@type": "MenuItem", "name": "Baguette tradition", "offers": {"@type": "Offer", "price": "1.30", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Ficelle", "offers": {"@type": "Offer", "price": "0.90", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Épi", "offers": {"@type": "Offer", "price": "1.40", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Pain de campagne", "offers": {"@type": "Offer", "price": "4.60", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Pain aux céréales", "offers": {"@type": "Offer", "price": "3.90", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Pain de mie", "offers": {"@type": "Offer", "price": "3.20", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Pain aux noix", "offers": {"@type": "Offer", "price": "4.40", "priceCurrency": "EUR"} }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Viennoiseries",
+        "hasMenuItem": [
+          { "@type": "MenuItem", "name": "Croissant", "offers": {"@type": "Offer", "price": "1.25", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Pain au chocolat", "offers": {"@type": "Offer", "price": "1.45", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Pain aux raisins", "offers": {"@type": "Offer", "price": "1.60", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Chausson aux pommes", "offers": {"@type": "Offer", "price": "1.90", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Cramique", "offers": {"@type": "Offer", "price": "6.50", "priceCurrency": "EUR"} }
+        ]
+      },
+      {
+        "@type": "MenuSection",
+        "name": "Douceurs du Nord",
+        "hasMenuItem": [
+          { "@type": "MenuItem", "name": "Tarte au sucre", "offers": {"@type": "Offer", "price": "9.50", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Tarte au libouli", "offers": {"@type": "Offer", "price": "2.40", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Merveilleux", "offers": {"@type": "Offer", "price": "2.80", "priceCurrency": "EUR"} },
+          { "@type": "MenuItem", "name": "Gaufre fourrée", "offers": {"@type": "Offer", "price": "2.20", "priceCurrency": "EUR"} }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- La marque : une boule de pain vue du dessus, trois coups de lame. La nuit, c'est aussi la lune. -->
+      <mask id="grigne" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+        <rect width="32" height="32" fill="#fff"/>
+        <path d="M9.2 11.6c3.2-2.3 7-3.2 10.6-2.8M7.4 17.4c4.4-3.2 9.9-4.6 15.4-4.1M10.4 23.1c3.3-2.1 7.3-2.9 11.2-2.4" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round"/>
+      </mask>
+      <!-- La baguette des sachets : sept coups de lame -->
+      <path id="baguette-corps" d="M10 47C8 34 26 22 58 18C180 6 420 4 548 14C578 17 594 28 592 40C590 53 572 62 540 65C420 76 180 75 60 66C30 63 12 58 10 47Z"/>
+    </defs>
+    <symbol id="marque" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14.5" fill="currentColor" mask="url(#grigne)"/></symbol>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-fleche" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bas" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6.5h16M4 12h16M4 17.5h16" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol>
+    <symbol id="i-fermer" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol>
+  </svg>
+
+  <p class="bandeau-demo">Démo · commerce fictif, réalisé par <a href="https://moreaudigital.fr/">Moreau Digital</a> · formule Premium</p>
+
+  <header class="barre">
+    <a class="barre__marque" href="index.html"><svg aria-hidden="true"><use href="#marque"/></svg><span class="visuellement-cache">Delcourt, accueil</span></a>
+    <nav class="barre__nav" aria-label="Pages du site">
+      <a href="index.html#nuit">La nuit</a>
+      <a href="pains.html" aria-current="page">Nos pains</a>
+      <a href="gateaux.html">Gâteaux</a>
+      <a href="index.html#reserver">Réserver</a>
+      <a href="index.html#venir">Venir</a>
+    </nav>
+    <p class="etat" data-etat hidden><span class="etat__point" aria-hidden="true"></span><span data-etat-texte></span></p>
+    <a class="langue" href="en/bread.html" hreflang="en" lang="en" aria-label="English version">EN</a>
+  </header>
+
+  <main id="haut">
+
+    <!-- Nos pains : le pain du jour en haut, puis tout le comptoir -->
+    <section class="page-tete" aria-labelledby="titre">
+      <h1 id="titre" class="page-tete__titre" data-enseigne>Nos pains</h1>
+      <p class="page-tete__sous">Un pain différent chaque jour de la semaine, en plus de la baguette et du pain de campagne.</p>
+
+      <div class="du-jour" data-semaine data-aujourdhui="Aujourd’hui">
+        <h2 class="visuellement-cache">Le pain de chaque jour</h2>
+        <ol class="jours">
+          <li class="jour" id="jour-1" data-jour="1" data-court="Lun">
+            <p class="jour__nom" data-jour-nom>Lundi</p>
+            <svg class="picto jour__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><circle class="picto__corps" cx="60" cy="40" r="31"/><path class="picto__trait" pathLength="1" style="--i:0;stroke-width:2.3" d="M53.5 36.3L46.2 31L38.5 32.5"/><path class="picto__trait" pathLength="1" style="--i:1;stroke-width:2.3" d="M54.5 36L57 25.6L53.2 17.8"/><path class="picto__trait" pathLength="1" style="--i:2;stroke-width:2.3" d="M54.1 35.3L62.5 37.6L70.6 33.3L79.8 27.4"/><path class="picto__trait" pathLength="1" style="--i:3;stroke-width:2.3" d="M62.6 38.2L64.3 47.7L62 56.4"/><path class="picto__trait" pathLength="1" style="--i:4;stroke-width:2.3" d="M65.7 47.8L74.4 50.5L81.4 46.7"/><path class="picto__trait" pathLength="1" style="--i:5;stroke-width:2.3" d="M53.9 36.1L49.7 46L41.5 50.3"/><path class="picto__trait" pathLength="1" style="--i:6;stroke-width:2.3" d="M50.6 45.6L53.4 54.5L51.8 62.6"/><path class="picto__trait" pathLength="1" style="--i:7;stroke-width:2.3" d="M71.4 34.4L74.1 41.4"/></svg>
+            <h3 class="jour__pain">Pain de seigle</h3>
+            <p class="jour__texte">Seigle et levain, une mie serrée et un peu acide. Avec des huîtres ou du maquereau fumé, rien ne le vaut.</p>
+            <p class="jour__infos">4,20&nbsp;€ · 500&nbsp;g · sort à 6&nbsp;h&nbsp;45</p>
+          </li>
+          <li class="jour" id="jour-2" data-jour="2" data-court="Mar">
+            <p class="jour__nom" data-jour-nom>Mardi</p>
+            <svg class="picto jour__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M105.3 32C105.5 33.1 105.3 34.2 104.7 35.4C104.2 36.6 103.2 37.9 102 39.3C100.7 40.6 99.1 42.1 97.2 43.6C95.3 45.1 93 46.7 90.6 48.2C88.1 49.7 85.4 51.3 82.5 52.6C79.6 53.9 76.5 55.2 73.3 56.2C70.1 57.3 66.7 58.1 63.3 58.7C59.9 59.3 56.4 59.7 53.1 59.8C49.7 59.9 46.3 59.8 43.2 59.5C40 59.3 36.9 58.8 34.1 58.2C31.3 57.6 28.6 56.9 26.3 56.1C24 55.4 22 54.5 20.3 53.7C18.7 52.8 17.3 51.9 16.4 51C15.5 50 14.9 49 14.7 48C14.5 46.9 14.7 45.8 15.3 44.6C15.8 43.4 16.8 42.1 18 40.7C19.3 39.4 20.9 37.9 22.8 36.4C24.7 34.9 27 33.3 29.4 31.8C31.9 30.3 34.6 28.7 37.5 27.4C40.4 26.1 43.5 24.8 46.7 23.8C49.9 22.7 53.3 21.9 56.7 21.3C60.1 20.7 63.6 20.3 66.9 20.2C70.3 20.1 73.7 20.2 76.8 20.5C80 20.7 83.1 21.2 85.9 21.8C88.7 22.4 91.4 23.1 93.7 23.9C96 24.6 98 25.5 99.7 26.3C101.3 27.2 102.7 28.1 103.6 29C104.5 30 105.1 31 105.3 32Z"/><path class="picto__lame" style="--i:0" d="M27 48.9Q46.8 36.8 93 31.1Q73.2 43.2 27 48.9Z"/></svg>
+            <h3 class="jour__pain">Pain d’épeautre</h3>
+            <p class="jour__texte">Rien que de la farine d’épeautre&nbsp;: un goût de noisette, et il se garde trois jours.</p>
+            <p class="jour__infos">4,90&nbsp;€ · 500&nbsp;g · sort à 6&nbsp;h&nbsp;45</p>
+          </li>
+          <li class="jour jour--ferme" id="jour-3" data-jour="3" data-court="Mer">
+            <p class="jour__nom" data-jour-nom>Mercredi</p>
+            <svg class="jour__lune" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><use href="#marque"/></svg>
+            <h3 class="jour__pain">On se repose.</h3>
+            <p class="jour__texte">La boutique est fermée. Antoine reprend le soir, à 22&nbsp;h, pour le pain du jeudi.</p>
+          </li>
+          <li class="jour" id="jour-4" data-jour="4" data-court="Jeu">
+            <p class="jour__nom" data-jour-nom>Jeudi</p>
+            <svg class="picto jour__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M105.3 32C105.5 33.3 105.4 34.6 104.8 36C104.3 37.4 103.4 38.9 102.2 40.5C100.9 42 99.3 43.6 97.4 45.2C95.6 46.8 93.3 48.5 90.9 50.1C88.5 51.6 85.7 53.2 82.8 54.5C79.9 55.9 76.8 57.2 73.6 58.2C70.4 59.2 67 60.1 63.6 60.7C60.3 61.3 56.8 61.6 53.4 61.8C50.1 61.9 46.7 61.8 43.5 61.5C40.3 61.2 37.2 60.6 34.4 60C31.6 59.4 28.9 58.6 26.6 57.7C24.3 56.9 22.2 55.9 20.5 54.9C18.9 53.8 17.5 52.7 16.5 51.6C15.5 50.5 14.9 49.3 14.7 48C14.5 46.7 14.6 45.4 15.2 44C15.7 42.6 16.6 41.1 17.8 39.5C19.1 38 20.7 36.4 22.6 34.8C24.4 33.2 26.7 31.5 29.1 29.9C31.5 28.4 34.3 26.8 37.2 25.5C40.1 24.1 43.2 22.8 46.4 21.8C49.6 20.8 53 19.9 56.4 19.3C59.7 18.7 63.2 18.4 66.6 18.2C69.9 18.1 73.3 18.2 76.5 18.5C79.7 18.8 82.8 19.4 85.6 20C88.4 20.6 91.1 21.4 93.4 22.3C95.7 23.1 97.8 24.1 99.5 25.1C101.1 26.2 102.5 27.3 103.5 28.4C104.5 29.5 105.1 30.7 105.3 32Z"/><path class="picto__lame" style="--i:0" d="M28.1 43.1Q30.5 35.6 37.1 31.3Q34.7 38.8 28.1 43.1Z"/><path class="picto__lame" style="--i:1" d="M28.9 48Q36.6 49.8 41.5 56Q33.8 54.2 28.9 48Z"/><path class="picto__lame" style="--i:2" d="M40.9 40.8Q43.3 33.4 50 29.1Q47.5 36.5 40.9 40.8Z"/><path class="picto__lame" style="--i:3" d="M41.7 45.8Q49.4 47.5 54.3 53.7Q46.6 51.9 41.7 45.8Z"/><path class="picto__lame" style="--i:4" d="M53.7 38.6Q56.1 31.1 62.8 26.8Q60.3 34.3 53.7 38.6Z"/><path class="picto__lame" style="--i:5" d="M54.5 43.5Q62.2 45.3 67.1 51.4Q59.4 49.7 54.5 43.5Z"/><path class="picto__lame" style="--i:6" d="M66.5 36.3Q69 28.9 75.6 24.6Q73.1 32 66.5 36.3Z"/><path class="picto__lame" style="--i:7" d="M67.3 41.2Q75 43 79.9 49.2Q72.2 47.4 67.3 41.2Z"/><path class="picto__lame" style="--i:8" d="M79.3 34.1Q81.8 26.6 88.4 22.3Q85.9 29.8 79.3 34.1Z"/><path class="picto__lame" style="--i:9" d="M80.1 39Q87.8 40.8 92.7 46.9Q85 45.2 80.1 39Z"/></svg>
+            <h3 class="jour__pain">Pain à la bière</h3>
+            <p class="jour__texte">La pâte est mouillée à la bière blonde d’une brasserie du Boulonnais. Croûte épaisse, mie dorée, un goût de malt.</p>
+            <p class="jour__infos">4,80&nbsp;€ · 600&nbsp;g · sort à 11&nbsp;h&nbsp;30</p>
+          </li>
+          <li class="jour" id="jour-5" data-jour="5" data-court="Ven">
+            <p class="jour__nom" data-jour-nom>Vendredi</p>
+            <svg class="picto jour__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M106.3 31.8C106.5 33 106.3 34.3 105.8 35.6C105.2 36.9 104.2 38.3 103 39.8C101.7 41.3 100 42.8 98.1 44.4C96.2 45.9 93.9 47.6 91.4 49.1C88.9 50.6 86 52.2 83.1 53.5C80.1 54.9 76.9 56.2 73.7 57.2C70.4 58.2 66.9 59.1 63.5 59.7C60 60.3 56.5 60.7 53.1 60.8C49.6 61 46.2 60.9 42.9 60.6C39.7 60.4 36.5 59.9 33.6 59.3C30.8 58.7 28.1 58 25.7 57.2C23.4 56.4 21.3 55.5 19.6 54.5C17.9 53.6 16.5 52.6 15.5 51.5C14.5 50.4 13.9 49.3 13.7 48.2C13.5 47 13.7 45.7 14.2 44.4C14.8 43.1 15.8 41.7 17 40.2C18.3 38.7 20 37.2 21.9 35.6C23.8 34.1 26.1 32.4 28.6 30.9C31.1 29.4 34 27.8 36.9 26.5C39.9 25.1 43.1 23.8 46.3 22.8C49.6 21.8 53.1 20.9 56.5 20.3C60 19.7 63.5 19.3 66.9 19.2C70.4 19 73.8 19.1 77.1 19.4C80.3 19.6 83.5 20.1 86.4 20.7C89.2 21.3 91.9 22 94.3 22.8C96.6 23.6 98.7 24.5 100.4 25.5C102.1 26.4 103.5 27.4 104.5 28.5C105.5 29.6 106.1 30.7 106.3 31.8Z"/><path class="picto__trait" pathLength="1" style="--i:0;stroke-width:3.4" d="M25.5 46.1L26.8 46.8L28.2 47.5L29.4 48.1L30.7 48.6L32 49L33.2 49.2L34.4 49.2L35.5 49L36.6 48.6L37.7 48L38.8 47.2L39.8 46.3L40.8 45.3L41.8 44.2L42.8 43L43.7 41.9L44.7 40.8L45.7 39.8L46.8 38.9L47.8 38.1L48.9 37.5L50 37.1L51.2 36.9L52.3 36.9L53.6 37.1L54.8 37.4L56.1 37.9L57.4 38.6L58.7 39.3L60 40L61.3 40.7L62.6 41.4L63.9 42.1L65.2 42.6L66.4 42.9L67.7 43.1L68.8 43.1L70 42.9L71.1 42.5L72.2 41.9L73.2 41.1L74.3 40.2L75.3 39.2L76.3 38.1L77.2 37L78.2 35.8L79.2 34.7L80.2 33.7L81.2 32.8L82.3 32L83.4 31.4L84.5 31L85.6 30.8L86.8 30.8L88 31L89.3 31.4L90.6 31.9L91.8 32.5L93.2 33.2L94.5 33.9"/></svg>
+            <h3 class="jour__pain">Pain aux algues</h3>
+            <p class="jour__texte">Dulse et laitue de mer séchées, ramassées sur la côte d’Opale. Pour le poisson du vendredi, ou en tartine avec du beurre demi-sel.</p>
+            <p class="jour__infos">4,60&nbsp;€ · 400&nbsp;g · sort à 6&nbsp;h&nbsp;45</p>
+          </li>
+          <li class="jour" id="jour-6" data-jour="6" data-court="Sam">
+            <p class="jour__nom" data-jour-nom>Samedi</p>
+            <svg class="picto jour__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" fill-rule="evenodd" d="M93 40A33 33 0 1 0 27 40A33 33 0 1 0 93 40ZM72.5 40A12.5 12.5 0 1 1 47.5 40A12.5 12.5 0 1 1 72.5 40Z"/><path class="picto__lame" style="--i:0" d="M60 21Q64.5 16.7 75.7 18Q71.2 22.3 60 21Z"/><path class="picto__lame" style="--i:1" d="M74.9 28.2Q81 29 87 38.6Q80.8 37.8 74.9 28.2Z"/><path class="picto__lame" style="--i:2" d="M78.5 44.2Q81.7 49.5 77.9 60.2Q74.7 54.9 78.5 44.2Z"/><path class="picto__lame" style="--i:3" d="M68.2 57.1Q66.1 62.9 55.4 66.6Q57.6 60.8 68.2 57.1Z"/><path class="picto__lame" style="--i:4" d="M51.8 57.1Q45.9 59.1 36.3 53Q42.2 51 51.8 57.1Z"/><path class="picto__lame" style="--i:5" d="M41.5 44.2Q36.3 40.8 35.1 29.6Q40.3 33 41.5 44.2Z"/><path class="picto__lame" style="--i:6" d="M45.1 28.2Q44.6 22 52.6 14Q53.2 20.2 45.1 28.2Z"/></svg>
+            <h3 class="jour__pain">Couronne au levain</h3>
+            <p class="jour__texte">Une grande couronne à poser au milieu de la table et à rompre à la main, pour les repas de famille.</p>
+            <p class="jour__infos">6,80&nbsp;€ · 1&nbsp;kg · sort à 11&nbsp;h&nbsp;30</p>
+          </li>
+          <li class="jour" id="jour-0" data-jour="0" data-court="Dim">
+            <p class="jour__nom" data-jour-nom>Dimanche</p>
+            <svg class="picto jour__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M106.3 31.8C106.5 32.8 106.2 33.9 105.7 35C105.1 36.2 104.1 37.4 102.8 38.8C101.5 40.1 99.8 41.6 97.9 43.1C95.9 44.7 93.6 46.3 91.1 47.8C88.6 49.4 85.8 51 82.9 52.4C79.9 53.8 76.7 55.1 73.5 56.2C70.2 57.2 66.7 58.1 63.3 58.7C59.9 59.3 56.3 59.7 52.9 59.8C49.4 59.9 46 59.7 42.7 59.4C39.5 59.2 36.3 58.6 33.4 58C30.5 57.4 27.8 56.7 25.5 55.9C23.2 55.2 21.1 54.3 19.4 53.5C17.7 52.7 16.3 51.8 15.4 50.9C14.5 50 13.9 49.2 13.7 48.2C13.5 47.2 13.8 46.1 14.3 45C14.9 43.8 15.9 42.6 17.2 41.2C18.5 39.9 20.2 38.4 22.1 36.9C24.1 35.3 26.4 33.7 28.9 32.2C31.4 30.6 34.2 29 37.1 27.6C40.1 26.2 43.3 24.9 46.5 23.8C49.8 22.8 53.3 21.9 56.7 21.3C60.1 20.7 63.7 20.3 67.1 20.2C70.6 20.1 74 20.3 77.3 20.6C80.5 20.8 83.7 21.4 86.6 22C89.5 22.6 92.2 23.3 94.5 24.1C96.8 24.8 98.9 25.7 100.6 26.5C102.3 27.3 103.7 28.2 104.6 29.1C105.5 30 106.1 30.8 106.3 31.8Z"/><path class="picto__trait" pathLength="1" style="--i:0;stroke-width:2.3" d="M22.5 34.7Q32.1 37.3 34.2 46.1"/><path class="picto__trait" pathLength="1" style="--i:1;stroke-width:2.3" d="M31.7 56.9Q39.8 51.2 38.8 42.2"/><path class="picto__trait" pathLength="1" style="--i:2;stroke-width:2.3" d="M32.4 30.4Q42.2 33.9 44.5 44.3"/><path class="picto__trait" pathLength="1" style="--i:3;stroke-width:2.3" d="M42.5 57.5Q50.4 50.9 49.1 40.4"/><path class="picto__trait" pathLength="1" style="--i:4;stroke-width:2.3" d="M42.5 27.1Q52.3 31.1 54.8 42.4"/><path class="picto__trait" pathLength="1" style="--i:5;stroke-width:2.3" d="M53.1 57.2Q61 50 59.4 38.6"/><path class="picto__trait" pathLength="1" style="--i:6;stroke-width:2.3" d="M52.7 24.7Q62.6 28.9 65.2 40.6"/><path class="picto__trait" pathLength="1" style="--i:7;stroke-width:2.3" d="M63.5 56Q71.4 48.6 69.8 36.8"/><path class="picto__trait" pathLength="1" style="--i:8;stroke-width:2.3" d="M63.1 23.2Q73 27.3 75.5 38.8"/><path class="picto__trait" pathLength="1" style="--i:9;stroke-width:2.3" d="M73.8 53.8Q81.7 46.6 80.1 34.9"/><path class="picto__trait" pathLength="1" style="--i:10;stroke-width:2.3" d="M73.7 22.6Q83.5 26.3 85.9 37"/><path class="picto__trait" pathLength="1" style="--i:11;stroke-width:2.3" d="M83.9 50.7Q91.9 43.9 90.5 33.1"/><path class="picto__trait" pathLength="1" style="--i:12;stroke-width:2.3" d="M84.4 23Q94.1 25.8 96.2 35.1"/><path class="picto__trait" pathLength="1" style="--i:13;stroke-width:2.3" d="M93.9 46.8Q102 40.7 100.8 31.3"/></svg>
+            <h3 class="jour__pain">Brioche tressée</h3>
+            <p class="jour__texte">Beurre, œufs et lait entier, tressée à trois brins à 4&nbsp;h du matin. Pour le petit-déjeuner du dimanche.</p>
+            <p class="jour__infos">7,50&nbsp;€ · 500&nbsp;g · sort à 7&nbsp;h</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="carte" id="pains" aria-labelledby="pains-titre">
+      <div class="contenu">
+        <h2 id="pains-titre" class="titre">Tous les jours</h2>
+        <p class="chapo">Sous chaque pain, les fournées où il sort du four&nbsp;: la prochaine en bleu, celle qui vient de sortir en orange.</p>
+        <ul class="articles">
+          <li class="article">
+            <svg class="picto article__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M114.3 26.5C114.5 26.9 114.1 27.5 113.3 28.2C112.6 29 111.3 29.8 109.7 30.9C108.1 31.9 106.1 33 103.7 34.3C101.3 35.5 98.6 36.9 95.6 38.3C92.6 39.7 89.2 41.2 85.7 42.6C82.2 44 78.4 45.5 74.5 46.7C70.7 48 66.6 49.2 62.5 50.2C58.5 51.2 54.3 52.1 50.3 52.8C46.3 53.5 42.3 54 38.5 54.4C34.8 54.8 31.1 55.1 27.8 55.2C24.5 55.4 21.4 55.5 18.7 55.5C16.1 55.5 13.7 55.4 11.8 55.3C9.9 55.1 8.4 54.9 7.4 54.7C6.4 54.4 5.8 54 5.7 53.5C5.5 53.1 5.9 52.5 6.7 51.8C7.4 51 8.7 50.2 10.3 49.1C11.9 48.1 13.9 47 16.3 45.7C18.7 44.5 21.4 43.1 24.4 41.7C27.4 40.3 30.8 38.8 34.3 37.4C37.8 36 41.6 34.5 45.5 33.3C49.3 32 53.4 30.8 57.5 29.8C61.5 28.8 65.7 27.9 69.7 27.2C73.7 26.5 77.7 26 81.5 25.6C85.2 25.2 88.9 24.9 92.2 24.8C95.5 24.6 98.6 24.5 101.3 24.5C103.9 24.5 106.3 24.6 108.2 24.7C110.1 24.9 111.6 25.1 112.6 25.3C113.6 25.6 114.2 26 114.3 26.5Z"/><path class="picto__lame" style="--i:0" d="M18.1 53.7Q22.1 47.3 35.9 42.7Q31.9 49.2 18.1 53.7Z"/><path class="picto__lame" style="--i:1" d="M34.6 49.6Q38.6 43.2 52.4 38.6Q48.4 45.1 34.6 49.6Z"/><path class="picto__lame" style="--i:2" d="M51.1 45.5Q55.1 39 68.9 34.5Q64.9 41 51.1 45.5Z"/><path class="picto__lame" style="--i:3" d="M67.6 41.4Q71.6 34.9 85.4 30.4Q81.4 36.8 67.6 41.4Z"/><path class="picto__lame" style="--i:4" d="M84.1 37.3Q88.1 30.8 101.9 26.3Q97.9 32.7 84.1 37.3Z"/></svg>
+            <h3 class="article__nom">Baguette tradition</h3>
+            <p class="article__prix">1,30&nbsp;€</p>
+            <p class="article__texte">Farine de tradition, levain et dix-huit heures de pousse au frais. Croûte fine, mie crème.</p>
+            <p class="article__infos"><span>250&nbsp;g</span> <span class="visuellement-cache">Sort du four à</span> <span class="fournee" data-f="0">6&nbsp;h&nbsp;45</span> <span class="fournee" data-f="1">11&nbsp;h&nbsp;30</span> <span class="fournee" data-f="2">17&nbsp;h</span></p>
+            <p class="article__allergenes"><span>Allergènes&nbsp;:</span> gluten</p>
+          </li>
+          <li class="article">
+            <svg class="picto article__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M113.6 20.5C113.7 20.8 113.3 21.2 112.5 21.9C111.8 22.5 110.5 23.3 108.9 24.3C107.3 25.3 105.3 26.4 103 27.7C100.6 29 97.9 30.5 94.9 32C91.9 33.5 88.6 35.1 85.1 36.7C81.7 38.3 77.9 40 74.1 41.6C70.3 43.2 66.2 44.8 62.3 46.2C58.3 47.6 54.2 49 50.2 50.3C46.3 51.5 42.3 52.6 38.6 53.6C35 54.6 31.3 55.5 28.1 56.3C24.9 57 21.8 57.7 19.2 58.2C16.6 58.7 14.3 59.1 12.4 59.4C10.6 59.7 9.1 59.9 8.1 59.9C7.1 59.9 6.5 59.8 6.4 59.5C6.3 59.2 6.7 58.8 7.5 58.1C8.2 57.5 9.5 56.7 11.1 55.7C12.7 54.7 14.7 53.6 17 52.3C19.4 51 22.1 49.5 25.1 48C28.1 46.5 31.4 44.9 34.9 43.3C38.3 41.7 42.1 40 45.9 38.4C49.7 36.8 53.8 35.2 57.7 33.8C61.7 32.4 65.8 31 69.8 29.7C73.7 28.5 77.7 27.4 81.4 26.4C85 25.4 88.7 24.5 91.9 23.7C95.1 23 98.2 22.3 100.8 21.8C103.4 21.3 105.7 20.9 107.6 20.6C109.4 20.3 110.9 20.1 111.9 20.1C112.9 20.1 113.5 20.2 113.6 20.5Z"/><path class="picto__lame" style="--i:0" d="M25.4 54.7Q29.3 49.5 41 44.8Q37.2 50 25.4 54.7Z"/><path class="picto__lame" style="--i:1" d="M43.3 48.2Q47.1 43 58.8 38.3Q55 43.5 43.3 48.2Z"/><path class="picto__lame" style="--i:2" d="M61.2 41.7Q65 36.5 76.7 31.8Q72.9 37 61.2 41.7Z"/><path class="picto__lame" style="--i:3" d="M79 35.2Q82.8 30 94.6 25.3Q90.7 30.5 79 35.2Z"/></svg>
+            <h3 class="article__nom">Ficelle</h3>
+            <p class="article__prix">0,90&nbsp;€</p>
+            <p class="article__texte">Une baguette fine, presque toute en croûte. Pour l’apéritif ou le jambon-beurre.</p>
+            <p class="article__infos"><span>125&nbsp;g</span> <span class="visuellement-cache">Sort du four à</span> <span class="fournee" data-f="1">11&nbsp;h&nbsp;30</span> <span class="fournee" data-f="2">17&nbsp;h</span></p>
+            <p class="article__allergenes"><span>Allergènes&nbsp;:</span> gluten</p>
+          </li>
+          <li class="article">
+            <svg class="picto article__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><ellipse class="picto__lobe" cx="100.3" cy="26.9" rx="11.5" ry="7" transform="rotate(-18 100.3 26.9)"/><ellipse class="picto__lobe" cx="87.5" cy="36.5" rx="12.4" ry="7.6" transform="rotate(22 87.5 36.5)"/><ellipse class="picto__lobe" cx="73.6" cy="30.1" rx="12.4" ry="7.6" transform="rotate(-58 73.6 30.1)"/><ellipse class="picto__lobe" cx="66.2" cy="43.5" rx="12.4" ry="7.6" transform="rotate(22 66.2 43.5)"/><ellipse class="picto__lobe" cx="52.3" cy="37" rx="12.4" ry="7.6" transform="rotate(-58 52.3 37)"/><ellipse class="picto__lobe" cx="44.9" cy="50.4" rx="12.4" ry="7.6" transform="rotate(22 44.9 50.4)"/><ellipse class="picto__lobe" cx="31" cy="44" rx="12.4" ry="7.6" transform="rotate(-58 31 44)"/><ellipse class="picto__lobe" cx="23.6" cy="57.3" rx="12.4" ry="7.6" transform="rotate(22 23.6 57.3)"/><path class="picto__lame" style="--i:0" d="M18.9 55.4Q24.3 55.5 28.2 59.2Q22.9 59.1 18.9 55.4Z"/><path class="picto__lame" style="--i:1" d="M28.4 48.2Q29.4 42.9 33.7 39.7Q32.6 45 28.4 48.2Z"/><path class="picto__lame" style="--i:2" d="M40.2 48.5Q45.6 48.6 49.5 52.3Q44.2 52.1 40.2 48.5Z"/><path class="picto__lame" style="--i:3" d="M49.7 41.3Q50.7 36 55 32.8Q53.9 38 49.7 41.3Z"/><path class="picto__lame" style="--i:4" d="M61.5 41.6Q66.9 41.7 70.8 45.3Q65.5 45.2 61.5 41.6Z"/><path class="picto__lame" style="--i:5" d="M71 34.4Q72 29.1 76.3 25.9Q75.2 31.1 71 34.4Z"/><path class="picto__lame" style="--i:6" d="M82.8 34.7Q88.2 34.8 92.1 38.4Q86.8 38.3 82.8 34.7Z"/><path class="picto__lame" style="--i:7" d="M95.6 28.4Q99.7 25.1 105.1 25.4Q100.9 28.7 95.6 28.4Z"/></svg>
+            <h3 class="article__nom">Épi</h3>
+            <p class="article__prix">1,40&nbsp;€</p>
+            <p class="article__texte">La pâte de la tradition, coupée aux ciseaux&nbsp;: chaque morceau se détache à la main.</p>
+            <p class="article__infos"><span>250&nbsp;g</span> <span class="visuellement-cache">Sort du four à</span> <span class="fournee" data-f="1">11&nbsp;h&nbsp;30</span> <span class="fournee" data-f="2">17&nbsp;h</span></p>
+            <p class="article__allergenes"><span>Allergènes&nbsp;:</span> gluten</p>
+          </li>
+          <li class="article">
+            <svg class="picto article__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><circle class="picto__corps" cx="60" cy="40" r="31"/><path class="picto__lame" style="--i:0" d="M45.3 25.2Q57.4 20.6 78.8 31.1Q66.8 35.7 45.3 25.2Z"/><path class="picto__lame" style="--i:1" d="M74.8 25.3Q79.4 37.4 68.9 58.8Q64.3 46.8 74.8 25.3Z"/><path class="picto__lame" style="--i:2" d="M74.7 54.8Q62.6 59.4 41.2 48.9Q53.2 44.3 74.7 54.8Z"/><path class="picto__lame" style="--i:3" d="M45.2 54.7Q40.6 42.6 51.1 21.2Q55.7 33.2 45.2 54.7Z"/></svg>
+            <h3 class="article__nom">Pain de campagne</h3>
+            <p class="article__prix">4,60&nbsp;€</p>
+            <p class="article__texte">Au levain, avec un peu de seigle. Il se garde quatre jours, et il est meilleur le deuxième.</p>
+            <p class="article__infos"><span>800&nbsp;g</span> <span class="visuellement-cache">Sort du four à</span> <span class="fournee" data-f="0">6&nbsp;h&nbsp;45</span> <span class="fournee" data-f="2">17&nbsp;h</span></p>
+            <p class="article__allergenes"><span>Allergènes&nbsp;:</span> gluten (blé, seigle)</p>
+          </li>
+          <li class="article">
+            <svg class="picto article__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M105.3 32C105.5 33.3 105.4 34.6 104.8 36C104.3 37.4 103.4 38.8 102.1 40.3C100.9 41.8 99.3 43.4 97.4 44.9C95.5 46.4 93.2 48 90.8 49.5C88.4 51 85.6 52.5 82.7 53.8C79.8 55.1 76.6 56.3 73.4 57.3C70.2 58.3 66.8 59.1 63.5 59.7C60.1 60.3 56.6 60.7 53.3 60.8C49.9 61 46.5 60.9 43.4 60.7C40.2 60.5 37.1 60 34.3 59.5C31.5 58.9 28.8 58.2 26.5 57.4C24.2 56.6 22.2 55.7 20.5 54.7C18.8 53.7 17.5 52.7 16.5 51.5C15.5 50.4 14.9 49.2 14.7 48C14.5 46.7 14.6 45.4 15.2 44C15.7 42.6 16.6 41.2 17.9 39.7C19.1 38.2 20.7 36.6 22.6 35.1C24.5 33.6 26.8 32 29.2 30.5C31.6 29 34.4 27.5 37.3 26.2C40.2 24.9 43.4 23.7 46.6 22.7C49.8 21.7 53.2 20.9 56.5 20.3C59.9 19.7 63.4 19.3 66.7 19.2C70.1 19 73.5 19.1 76.6 19.3C79.8 19.5 82.9 20 85.7 20.5C88.5 21.1 91.2 21.8 93.5 22.6C95.8 23.4 97.8 24.3 99.5 25.3C101.2 26.3 102.5 27.3 103.5 28.5C104.5 29.6 105.1 30.8 105.3 32Z"/><path class="picto__lame" style="--i:0" d="M32.7 52.4Q34.4 43.9 47.9 34.5Q46.2 43.1 32.7 52.4Z"/><path class="picto__lame" style="--i:1" d="M52.4 48.9Q54.1 40.4 67.6 31.1Q65.9 39.6 52.4 48.9Z"/><path class="picto__lame" style="--i:2" d="M72.1 45.5Q73.8 36.9 87.3 27.6Q85.6 36.1 72.1 45.5Z"/><ellipse class="picto__grain" cx="73.3" cy="22.9" rx="1.8" ry="1.1" transform="rotate(96.5 73.3 22.9)"/><ellipse class="picto__grain" cx="24" cy="37" rx="1.8" ry="1.1" transform="rotate(148.8 24 37)"/><ellipse class="picto__grain" cx="91.5" cy="31.6" rx="1.8" ry="1.1" transform="rotate(26 91.5 31.6)"/><ellipse class="picto__grain" cx="67.2" cy="45.6" rx="1.8" ry="1.1" transform="rotate(67 67.2 45.6)"/><ellipse class="picto__grain" cx="64.2" cy="22.5" rx="1.8" ry="1.1" transform="rotate(10.7 64.2 22.5)"/><ellipse class="picto__grain" cx="53.6" cy="32.6" rx="1.8" ry="1.1" transform="rotate(105.4 53.6 32.6)"/><ellipse class="picto__grain" cx="55.9" cy="32" rx="1.8" ry="1.1" transform="rotate(143 55.9 32)"/><ellipse class="picto__grain" cx="77.5" cy="29.8" rx="1.8" ry="1.1" transform="rotate(103.4 77.5 29.8)"/><ellipse class="picto__grain" cx="62.2" cy="55" rx="1.8" ry="1.1" transform="rotate(131.3 62.2 55)"/><ellipse class="picto__grain" cx="26.4" cy="36.7" rx="1.8" ry="1.1" transform="rotate(136.3 26.4 36.7)"/><ellipse class="picto__grain" cx="29.4" cy="39.6" rx="1.8" ry="1.1" transform="rotate(7.1 29.4 39.6)"/><ellipse class="picto__grain" cx="74.8" cy="50.6" rx="1.8" ry="1.1" transform="rotate(103.1 74.8 50.6)"/><ellipse class="picto__grain" cx="93" cy="32.5" rx="1.8" ry="1.1" transform="rotate(125.2 93 32.5)"/><ellipse class="picto__grain" cx="68.3" cy="43.2" rx="1.8" ry="1.1" transform="rotate(82.1 68.3 43.2)"/><ellipse class="picto__grain" cx="21.3" cy="48.1" rx="1.8" ry="1.1" transform="rotate(116.5 21.3 48.1)"/><ellipse class="picto__grain" cx="41" cy="35.4" rx="1.8" ry="1.1" transform="rotate(120.4 41 35.4)"/><ellipse class="picto__grain" cx="50.4" cy="54.9" rx="1.8" ry="1.1" transform="rotate(14.5 50.4 54.9)"/><ellipse class="picto__grain" cx="92" cy="31.1" rx="1.8" ry="1.1" transform="rotate(74.8 92 31.1)"/><ellipse class="picto__grain" cx="47.6" cy="55.4" rx="1.8" ry="1.1" transform="rotate(172.4 47.6 55.4)"/><ellipse class="picto__grain" cx="36.4" cy="29.3" rx="1.8" ry="1.1" transform="rotate(87.3 36.4 29.3)"/><ellipse class="picto__grain" cx="48.5" cy="42.7" rx="1.8" ry="1.1" transform="rotate(171.6 48.5 42.7)"/><ellipse class="picto__grain" cx="71.8" cy="22.5" rx="1.8" ry="1.1" transform="rotate(12.1 71.8 22.5)"/></svg>
+            <h3 class="article__nom">Pain aux céréales</h3>
+            <p class="article__prix">3,90&nbsp;€</p>
+            <p class="article__texte">Lin, tournesol, sésame et pavot, trempés la veille pour rester tendres.</p>
+            <p class="article__infos"><span>500&nbsp;g</span> <span class="visuellement-cache">Sort du four à</span> <span class="fournee" data-f="0">6&nbsp;h&nbsp;45</span></p>
+            <p class="article__allergenes"><span>Allergènes&nbsp;:</span> gluten, sésame</p>
+          </li>
+          <li class="article">
+            <svg class="picto article__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M28 37C28 21 44 17 60 17C76 17 92 21 92 37L90 37L90 64Q90 67 87 67L33 67Q30 67 30 64L30 37Z"/><path class="picto__trait" pathLength="1" style="--i:0;stroke-width:2.2" d="M31 38L89 38"/><path class="picto__trait" pathLength="1" style="--i:1;stroke-width:2" d="M40 26Q60 21 80 26"/></svg>
+            <h3 class="article__nom">Pain de mie</h3>
+            <p class="article__prix">3,20&nbsp;€</p>
+            <p class="article__texte">Au lait entier et au beurre, cuit en moule. Pour les croque-monsieur et les tartines du goûter.</p>
+            <p class="article__infos"><span>500&nbsp;g</span> <span class="visuellement-cache">Sort du four à</span> <span class="fournee" data-f="0">6&nbsp;h&nbsp;45</span></p>
+            <p class="article__allergenes"><span>Allergènes&nbsp;:</span> gluten, lait</p>
+          </li>
+          <li class="article">
+            <svg class="picto article__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M99.6 34.4C99.8 35.9 99.7 37.4 99.2 39C98.8 40.5 98 42.1 96.9 43.7C95.8 45.2 94.4 46.9 92.8 48.4C91.1 49.9 89.1 51.5 87 52.9C84.9 54.3 82.4 55.7 79.9 56.8C77.4 58 74.6 59.1 71.8 59.9C69 60.7 66 61.4 63.1 61.8C60.1 62.2 57.1 62.4 54.2 62.4C51.2 62.4 48.3 62.1 45.5 61.7C42.8 61.3 40.1 60.6 37.6 59.8C35.2 59.1 32.8 58.1 30.8 57.1C28.8 56.1 27 54.9 25.5 53.7C24.1 52.5 22.9 51.2 22 49.8C21.1 48.5 20.6 47 20.4 45.6C20.2 44.1 20.3 42.6 20.8 41C21.2 39.5 22 37.9 23.1 36.3C24.2 34.8 25.6 33.1 27.2 31.6C28.9 30.1 30.9 28.5 33 27.1C35.1 25.7 37.6 24.3 40.1 23.2C42.6 22 45.4 20.9 48.2 20.1C51 19.3 54 18.6 56.9 18.2C59.9 17.8 62.9 17.6 65.8 17.6C68.8 17.6 71.7 17.9 74.5 18.3C77.2 18.7 79.9 19.4 82.4 20.2C84.8 20.9 87.2 21.9 89.2 22.9C91.2 23.9 93 25.1 94.5 26.3C95.9 27.5 97.1 28.8 98 30.2C98.9 31.5 99.4 33 99.6 34.4Z"/><path class="picto__lame" style="--i:0" d="M41 55.8Q39.5 46.2 47.3 28.7Q48.8 38.3 41 55.8Z"/><path class="picto__lame" style="--i:1" d="M56.9 53.6Q55.4 43.9 63.1 26.4Q64.6 36.1 56.9 53.6Z"/><path class="picto__lame" style="--i:2" d="M72.7 51.3Q71.2 41.7 79 24.2Q80.5 33.8 72.7 51.3Z"/></svg>
+            <h3 class="article__nom">Pain aux noix</h3>
+            <p class="article__prix">4,40&nbsp;€</p>
+            <p class="article__texte">Noix entières et levain de seigle. De la mi-octobre à la fin de l’hiver.</p>
+            <p class="article__infos"><span>400&nbsp;g</span> <span class="visuellement-cache">Sort du four à</span> <span class="fournee" data-f="0">6&nbsp;h&nbsp;45</span> <span class="fournee" data-f="2">17&nbsp;h</span></p>
+            <p class="article__allergenes"><span>Allergènes&nbsp;:</span> gluten, noix</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="carte carte--encre" id="viennoiseries" aria-labelledby="viennoiseries-titre">
+      <div class="contenu">
+        <h2 id="viennoiseries-titre" class="titre">Viennoiseries</h2>
+        <p class="chapo">Au beurre des Charentes, avec la première fournée. Le dimanche, à 7&nbsp;h.</p>
+        <ul class="articles">
+          <li class="article">
+            <svg class="picto article__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M32.5 58.1L32.2 56L31.9 53.8L31.7 51.5L31.6 49.1L31.7 46.6L32 44L32.6 41.4L33.4 38.8L34.4 36.2L35.7 33.7L37.2 31.4L39 29.1L41.1 27L43.3 25.2L45.8 23.5L48.4 22.1L51.2 21L54.1 20.2L57 19.8L60 19.6L63 19.8L65.9 20.2L68.8 21L71.6 22.1L74.2 23.5L76.7 25.2L78.9 27L81 29.1L82.8 31.4L84.3 33.7L85.6 36.2L86.6 38.8L87.4 41.4L88 44L88.3 46.6L88.4 49.1L88.3 51.5L88.1 53.8L87.8 56L87.5 58.1L84.7 58.9L84 57.4L83.1 56L82 54.7L80.9 53.6L79.6 52.5L78.3 51.6L76.9 50.8L75.5 50.1L74.1 49.6L72.7 49.1L71.4 48.7L70 48.4L68.7 48.1L67.4 48L66.1 47.8L64.8 47.7L63.6 47.7L62.4 47.6L61.2 47.6L60 47.6L58.8 47.6L57.6 47.6L56.4 47.7L55.2 47.7L53.9 47.8L52.6 48L51.3 48.1L50 48.4L48.6 48.7L47.3 49.1L45.9 49.6L44.5 50.1L43.1 50.8L41.7 51.6L40.4 52.5L39.1 53.6L38 54.7L36.9 56L36 57.4L35.3 58.9Z"/><path class="picto__trait" pathLength="1" style="--i:0;stroke-width:2.4" d="M45 50.7Q41.4 43.3 31.4 39.6"/><path class="picto__trait" pathLength="1" style="--i:1;stroke-width:2.4" d="M54.1 49.1Q52.5 36.3 42.7 23.4"/><path class="picto__trait" pathLength="1" style="--i:2;stroke-width:2.4" d="M65.9 49.1Q67.5 36.3 77.3 23.4"/><path class="picto__trait" pathLength="1" style="--i:3;stroke-width:2.4" d="M75 50.7Q78.6 43.3 88.6 39.6"/></svg>
+            <h3 class="article__nom">Croissant</h3>
+            <p class="article__prix">1,25&nbsp;€</p>
+            <p class="article__texte">Pâte feuilletée la veille, beurre des Charentes. Le matin, il craque sous les doigts.</p>
+            <p class="article__infos"><span class="visuellement-cache">Sort du four à</span> <span class="fournee" data-f="0">6&nbsp;h&nbsp;45</span></p>
+            <p class="article__allergenes"><span>Allergènes&nbsp;:</span> gluten, lait, œufs</p>
+          </li>
+          <li class="article">
+            <svg class="picto article__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><rect class="picto__corps" x="22" y="22" width="76" height="38" rx="7" transform="rotate(-6 60 41)"/><path class="picto__trait" pathLength="1" style="--i:0;stroke-width:2.2" d="M29.7 40.2Q59.1 32 89.4 33.9"/><path class="picto__trait" pathLength="1" style="--i:1;stroke-width:1.8" d="M23.5 47.9L30.4 46.5"/><path class="picto__trait" pathLength="1" style="--i:2;stroke-width:1.8" d="M24 52.8L30.9 51.5"/><path class="picto__trait" pathLength="1" style="--i:3;stroke-width:1.8" d="M24.6 57.8L31.5 56.5"/><path class="picto__trait" pathLength="1" style="--i:4;stroke-width:1.8" d="M97.1 40.1L90.1 40.3"/><path class="picto__trait" pathLength="1" style="--i:5;stroke-width:1.8" d="M97.6 45.1L90.6 45.2"/><path class="picto__trait" pathLength="1" style="--i:6;stroke-width:1.8" d="M98.2 50.1L91.1 50.2"/></svg>
+            <h3 class="article__nom">Pain au chocolat</h3>
+            <p class="article__prix">1,45&nbsp;€</p>
+            <p class="article__texte">La même pâte, et deux barres de chocolat noir.</p>
+            <p class="article__infos"><span class="visuellement-cache">Sort du four à</span> <span class="fournee" data-f="0">6&nbsp;h&nbsp;45</span></p>
+            <p class="article__allergenes"><span>Allergènes&nbsp;:</span> gluten, lait, œufs, soja</p>
+          </li>
+          <li class="article">
+            <svg class="picto article__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><circle class="picto__corps" cx="60" cy="40" r="29"/><path class="picto__trait" pathLength="1" style="--i:0;stroke-width:2.4" d="M62.5 40L62.7 40.5L62.7 41L62.7 41.6L62.5 42.2L62.2 42.8L61.8 43.4L61.2 43.8L60.5 44.2L59.7 44.4L58.9 44.5L58 44.4L57.1 44.2L56.2 43.7L55.4 43.1L54.7 42.3L54.2 41.4L53.8 40.3L53.7 39.2L53.7 38L54 36.8L54.5 35.6L55.2 34.5L56.2 33.6L57.3 32.8L58.6 32.2L60.1 31.9L61.6 31.8L63.1 32L64.6 32.5L66 33.3L67.3 34.4L68.4 35.7L69.2 37.2L69.8 38.9L70.1 40.7L70 42.6L69.5 44.4L68.8 46.2L67.7 47.8L66.2 49.3L64.6 50.4L62.6 51.3L60.6 51.8L58.4 51.9L56.2 51.7L54.1 51L52.1 49.9L50.2 48.4L48.7 46.6L47.5 44.6L46.6 42.3L46.2 39.8L46.3 37.3L46.8 34.8L47.8 32.4L49.2 30.1L51 28.2L53.2 26.6L55.7 25.3L58.4 24.6L61.2 24.3L64.1 24.6L66.9 25.4L69.5 26.7L71.9 28.5L74 30.7L75.6 33.3L76.8 36.2L77.4 39.3L77.5 42.5L77 45.6L75.9 48.7L74.2 51.6L72 54.1L69.4 56.2L66.4 57.9L63.1 58.9L59.6 59.4L56.1 59.2L52.6 58.4L49.3 56.9L46.2 54.9L43.6 52.3L41.5 49.2L39.9 45.8L39 42.1L38.7 38.2L39.2 34.3L40.4 30.6L42.2 27.1"/><circle class="picto__grain" cx="59" cy="30.2" r="1.6"/><circle class="picto__grain" cx="46.2" cy="46.2" r="1.6"/><circle class="picto__grain" cx="71.8" cy="42.7" r="1.6"/><circle class="picto__grain" cx="45.3" cy="33.2" r="1.6"/><circle class="picto__grain" cx="47.9" cy="28.8" r="1.6"/><circle class="picto__grain" cx="56.3" cy="45.8" r="1.6"/><circle class="picto__grain" cx="61.1" cy="45.9" r="1.6"/></svg>
+            <h3 class="article__nom">Pain aux raisins</h3>
+            <p class="article__prix">1,60&nbsp;€</p>
+            <p class="article__texte">Crème pâtissière à la vanille et raisins blonds, roulés en escargot.</p>
+            <p class="article__infos"><span class="visuellement-cache">Sort du four à</span> <span class="fournee" data-f="0">6&nbsp;h&nbsp;45</span></p>
+            <p class="article__allergenes"><span>Allergènes&nbsp;:</span> gluten, lait, œufs</p>
+          </li>
+          <li class="article">
+            <svg class="picto article__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M20.2 54.2C13.5 53.4 20 50.9 20.1 49.3C20.2 47.7 20.5 46.1 20.8 44.5C21.2 42.9 21.7 41.3 22.3 39.8C23 38.2 23.7 36.7 24.6 35.2C25.5 33.8 26.5 32.4 27.6 31C28.7 29.7 29.9 28.4 31.3 27.2C32.6 26 34 24.8 35.5 23.8C37 22.8 38.6 21.8 40.2 21C41.9 20.1 43.6 19.4 45.4 18.7C47.1 18.1 49 17.6 50.8 17.1C52.7 16.7 54.6 16.4 56.4 16.2C58.3 16 60.3 15.9 62.1 15.9C64 16 65.9 16.1 67.8 16.4C69.7 16.6 71.5 17 73.3 17.5C75.1 18 76.8 18.6 78.5 19.3C80.2 20 81.8 20.8 83.4 21.7C84.9 22.6 86.4 23.6 87.7 24.7C89.1 25.8 90.4 27 91.5 28.2C92.7 29.4 93.8 30.8 94.7 32.1C95.6 33.5 96.5 35 97.2 36.5C97.9 37.9 98.4 39.5 98.9 41C99.3 42.6 106.2 43.7 99.8 45.8C93.4 48 73.7 52.6 60.4 54C47.2 55.4 26.9 55 20.2 54.2Z"/><path class="picto__trait" pathLength="1" style="--i:0;stroke-width:1.9" d="M26.6 50.9L26.9 47.2L27.8 43.6L29.3 40L31.4 36.7L34 33.6L37 30.8L40.5 28.3L44.3 26.2L48.4 24.6L52.7 23.4L57.1 22.7L61.6 22.4L66.1 22.7L70.4 23.5L74.6 24.7L78.5 26.4L82 28.5L85.2 31L87.9 33.9L90.1 37L91.8 40.4L92.9 43.9"/><path class="picto__lame" style="--i:1" d="M55.2 42.7Q48.1 40.1 45.5 33Q52.6 35.6 55.2 42.7Z"/><path class="picto__lame" style="--i:2" d="M59.1 41Q55.2 34.9 57.7 28.1Q61.6 34.3 59.1 41Z"/><path class="picto__lame" style="--i:3" d="M63.2 41.9Q64.2 34.4 70.6 30.4Q69.6 37.9 63.2 41.9Z"/></svg>
+            <h3 class="article__nom">Chausson aux pommes</h3>
+            <p class="article__prix">1,90&nbsp;€</p>
+            <p class="article__texte">Une compote cuite ici, avec des pommes de la vallée de la Canche.</p>
+            <p class="article__infos"><span class="visuellement-cache">Sort du four à</span> <span class="fournee" data-f="0">6&nbsp;h&nbsp;45</span></p>
+            <p class="article__allergenes"><span>Allergènes&nbsp;:</span> gluten, lait</p>
+          </li>
+          <li class="article">
+            <svg class="picto article__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M28 49C26 14 45 10 60 10C75 10 94 14 92 49L90 49L90 64Q90 67 87 67L33 67Q30 67 30 64L30 49Z"/><path class="picto__trait" pathLength="1" style="--i:0;stroke-width:2.2" d="M31 50L89 50"/><circle class="picto__grain" cx="57.5" cy="32.6" r="1.4"/><circle class="picto__grain" cx="82.1" cy="30.1" r="1.4"/><circle class="picto__grain" cx="43.6" cy="31.3" r="1.4"/><circle class="picto__grain" cx="66.8" cy="38.6" r="1.4"/><circle class="picto__grain" cx="38.9" cy="25.9" r="1.4"/><circle class="picto__grain" cx="38.7" cy="39.1" r="1.4"/><circle class="picto__grain" cx="70.1" cy="19.1" r="1.4"/><circle class="picto__grain" cx="85.1" cy="43.1" r="1.4"/><circle class="picto__grain" cx="61.5" cy="19.5" r="1.4"/><circle class="picto__grain" cx="56.9" cy="39.9" r="1.4"/><circle class="picto__grain" cx="57.8" cy="25.2" r="1.4"/><circle class="picto__grain" cx="77.7" cy="36.4" r="1.4"/><circle class="picto__grain" cx="50.4" cy="24" r="1.4"/><circle class="picto__grain" cx="73.8" cy="28.4" r="1.4"/><circle class="picto__grain" cx="75.4" cy="22.6" r="1.4"/><circle class="picto__grain" cx="63.1" cy="29.6" r="1.4"/></svg>
+            <h3 class="article__nom">Cramique</h3>
+            <p class="article__prix">6,50&nbsp;€</p>
+            <p class="article__texte">La brioche du Nord, aux raisins et au sucre perlé. Pour le dimanche, ou pour le goûter.</p>
+            <p class="article__infos"><span>500&nbsp;g</span> <span class="visuellement-cache">Sort du four à</span> <span class="fournee" data-f="0">6&nbsp;h&nbsp;45</span></p>
+            <p class="article__allergenes"><span>Allergènes&nbsp;:</span> gluten, lait, œufs</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="carte carte--four" id="douceurs" aria-labelledby="douceurs-titre">
+      <div class="contenu">
+        <h2 id="douceurs-titre" class="titre">Douceurs du Nord</h2>
+        <p class="chapo">Les gâteaux du comptoir, à la part ou entiers. Pour un anniversaire, voyez les <a href="gateaux.html">gâteaux sur commande</a>.</p>
+        <ul class="articles">
+          <li class="article">
+            <svg class="picto article__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M92.3 40L90.9 42L89.4 43.9L90.4 46L91.2 48.4L89.4 50L87.4 51.4L87.8 53.7L88 56.1L85.8 57.2L83.6 58.1L83.3 60.4L82.8 62.8L80.4 63.3L78.1 63.6L77.2 65.8L76.2 68L73.7 67.8L71.4 67.4L70 69.4L68.4 71.2L66 70.4L63.9 69.4L62 70.9L60 72.3L58 70.9L56.1 69.4L54 70.4L51.6 71.2L50 69.4L48.6 67.4L46.3 67.8L43.9 68L42.8 65.8L41.9 63.6L39.6 63.3L37.2 62.8L36.7 60.4L36.4 58.1L34.2 57.2L32 56.1L32.2 53.7L32.6 51.4L30.6 50L28.8 48.4L29.6 46L30.6 43.9L29.1 42L27.7 40L29.1 38L30.6 36.1L29.6 34L28.8 31.6L30.6 30L32.6 28.6L32.2 26.3L32 23.9L34.2 22.8L36.4 21.9L36.7 19.6L37.2 17.2L39.6 16.7L41.9 16.4L42.8 14.2L43.8 12L46.3 12.2L48.6 12.6L50 10.6L51.6 8.8L54 9.6L56.1 10.6L58 9.1L60 7.7L62 9.1L63.9 10.6L66 9.6L68.4 8.8L70 10.6L71.4 12.6L73.7 12.2L76.2 12L77.2 14.2L78.1 16.4L80.4 16.7L82.8 17.2L83.3 19.6L83.6 21.9L85.8 22.8L88 23.8L87.8 26.3L87.4 28.6L89.4 30L91.2 31.6L90.4 34L89.4 36.1L90.9 38Z"/><circle class="picto__trait" pathLength="1" style="--i:0;stroke-width:2.2" cx="60" cy="40" r="25.2"/><circle class="picto__grain" cx="59.1" cy="23.4" r="2.1"/><circle class="picto__grain" cx="56.5" cy="40.8" r="2.3"/><circle class="picto__grain" cx="73.7" cy="30.1" r="1.1"/><circle class="picto__grain" cx="60.3" cy="54.4" r="1.7"/><circle class="picto__grain" cx="75.9" cy="41.3" r="1.2"/><circle class="picto__grain" cx="69.6" cy="34.4" r="2"/><circle class="picto__grain" cx="62.4" cy="32" r="1.1"/><circle class="picto__grain" cx="71.5" cy="51.8" r="0.9"/><circle class="picto__grain" cx="64.9" cy="59" r="1.2"/><circle class="picto__grain" cx="74.5" cy="25" r="1.3"/><circle class="picto__grain" cx="40" cy="35" r="1.9"/><circle class="picto__grain" cx="66.4" cy="50.9" r="1.1"/><circle class="picto__grain" cx="48.3" cy="41.4" r="2"/><circle class="picto__grain" cx="65" cy="39.2" r="0.9"/><circle class="picto__grain" cx="70.2" cy="25" r="0.9"/><circle class="picto__grain" cx="47.6" cy="53.9" r="1.8"/><circle class="picto__grain" cx="78.9" cy="32.8" r="1.4"/><circle class="picto__grain" cx="54.1" cy="54.3" r="1.4"/><circle class="picto__grain" cx="67.8" cy="44.2" r="1.1"/><circle class="picto__grain" cx="41.6" cy="45.2" r="1.5"/><circle class="picto__grain" cx="51" cy="25" r="2"/><circle class="picto__grain" cx="56.4" cy="27.9" r="1.3"/><circle class="picto__grain" cx="56.8" cy="47" r="1.2"/><circle class="picto__grain" cx="50.1" cy="31.6" r="1.8"/></svg>
+            <h3 class="article__nom">Tarte au sucre</h3>
+            <p class="article__prix">9,50&nbsp;€ <small>les 6&nbsp;parts</small></p>
+            <p class="article__texte">Pâte briochée, cassonade, beurre et crème. Encore tiède avec la fournée de 17&nbsp;h. À la part&nbsp;: 1,80&nbsp;€.</p>
+            <p class="article__infos"><span class="visuellement-cache">Sort du four à</span> <span class="fournee" data-f="2">17&nbsp;h</span></p>
+            <p class="article__allergenes"><span>Allergènes&nbsp;:</span> gluten, lait, œufs</p>
+          </li>
+          <li class="article">
+            <svg class="picto article__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M30 64L69.4 13.6A64 64 0 0 1 93 52.9Z"/><path class="picto__trait" pathLength="1" style="--i:0;stroke-width:2.2" d="M66.7 21.7A56 56 0 0 1 84.6 51.4"/><circle class="picto__grain" cx="74.4" cy="50" r="0.8"/><circle class="picto__grain" cx="47.5" cy="57.4" r="1.2"/><circle class="picto__grain" cx="60.5" cy="42.3" r="1.1"/><circle class="picto__grain" cx="61.4" cy="47.5" r="0.9"/><circle class="picto__grain" cx="55" cy="47.8" r="1.2"/><circle class="picto__grain" cx="75.6" cy="49.7" r="1.1"/><circle class="picto__grain" cx="54.3" cy="46" r="0.8"/><circle class="picto__grain" cx="44.5" cy="55.3" r="1"/></svg>
+            <h3 class="article__nom">Tarte au libouli</h3>
+            <p class="article__prix">2,40&nbsp;€ <small>la part</small></p>
+            <p class="article__texte">Le flan du Nord&nbsp;: lait vanillé sur pâte brisée, cuit sur une plaque de quarante centimètres.</p>
+            <p class="article__infos"><span class="visuellement-cache">Sort du four à</span> <span class="fournee" data-f="1">11&nbsp;h&nbsp;30</span></p>
+            <p class="article__allergenes"><span>Allergènes&nbsp;:</span> gluten, lait, œufs</p>
+          </li>
+          <li class="article">
+            <svg class="picto article__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M24 62C24 24 42 17 60 17C78 17 96 24 96 62Z"/><path class="picto__grain" d="M58.5 33.6Q59.2 36.5 57 38.6Q56.3 35.6 58.5 33.6Z"/><path class="picto__grain" d="M37.6 50.5Q39.8 53 39.1 56.2Q36.9 53.7 37.6 50.5Z"/><path class="picto__grain" d="M65.7 41.8Q64.4 45.6 60.8 47.3Q62.1 43.6 65.7 41.8Z"/><path class="picto__grain" d="M71.3 35.7Q73.7 38.4 73.1 41.9Q70.8 39.2 71.3 35.7Z"/><path class="picto__grain" d="M70.2 28.3Q73.6 27 76.8 28.7Q73.4 30 70.2 28.3Z"/><path class="picto__grain" d="M56.3 54.9Q60.6 53.8 64.4 55.8Q60.2 56.8 56.3 54.9Z"/><path class="picto__grain" d="M49.3 48.3Q53.3 47.6 56.8 49.9Q52.7 50.6 49.3 48.3Z"/><path class="picto__grain" d="M71.5 45Q71.9 48.8 69.5 51.8Q69 48 71.5 45Z"/><path class="picto__grain" d="M52.8 24Q56.3 24.9 57.8 28.2Q54.3 27.2 52.8 24Z"/><path class="picto__grain" d="M45 27.4Q47.4 29.9 47 33.3Q44.6 30.8 45 27.4Z"/><path class="picto__grain" d="M48.6 48.9Q48.1 52.2 45.2 53.7Q45.6 50.5 48.6 48.9Z"/><path class="picto__grain" d="M49.5 38.6Q53.4 38.9 55.9 41.9Q52 41.5 49.5 38.6Z"/><path class="picto__grain" d="M61.9 25.9Q66.3 25.8 69.7 28.5Q65.3 28.7 61.9 25.9Z"/><path class="picto__grain" d="M35.7 39.2Q36.5 42.3 34.3 44.6Q33.6 41.5 35.7 39.2Z"/><path class="picto__grain" d="M75.7 55.3Q72.8 57.7 69 57.3Q71.9 54.8 75.7 55.3Z"/><path class="picto__grain" d="M41.1 43.1Q44.8 43 47.3 45.7Q43.6 45.8 41.1 43.1Z"/><path class="picto__grain" d="M80.6 32.9Q78.7 35.8 75.3 36.1Q77.2 33.2 80.6 32.9Z"/><path class="picto__grain" d="M32.8 47.5Q32.9 50.9 30.3 53.2Q30.1 49.7 32.8 47.5Z"/><path class="picto__grain" d="M39.2 35.9Q42.8 35.1 45.8 37.3Q42.2 38.1 39.2 35.9Z"/><path class="picto__grain" d="M81.7 37.2Q84.2 39.8 83.9 43.4Q81.4 40.8 81.7 37.2Z"/><path class="picto__grain" d="M92.9 50.7Q89.7 53.5 85.4 53.6Q88.6 50.8 92.9 50.7Z"/><path class="picto__grain" d="M82.8 51.4Q84.1 55.3 82.4 59Q81.1 55.1 82.8 51.4Z"/><path class="picto__grain" d="M84.7 45Q82.7 48 79.2 48.4Q81.2 45.4 84.7 45Z"/><path class="picto__grain" d="M55.3 54.1Q54.5 57.1 51.5 58Q52.3 55 55.3 54.1Z"/><path class="picto__grain" d="M64.1 31.6Q67.3 32.5 68.6 35.7Q65.3 34.8 64.1 31.6Z"/><path class="picto__grain" d="M76.4 41.9Q77 44.9 74.8 47.1Q74.2 44 76.4 41.9Z"/></svg>
+            <h3 class="article__nom">Merveilleux</h3>
+            <p class="article__prix">2,80&nbsp;€</p>
+            <p class="article__texte">Meringue, crème fouettée et copeaux de chocolat noir. Venu de Lille et de Belgique.</p>
+            <p class="article__allergenes"><span>Allergènes&nbsp;:</span> lait, œufs</p>
+          </li>
+          <li class="article">
+            <svg class="picto article__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><ellipse class="picto__corps" cx="60" cy="40" rx="43" ry="25" transform="rotate(-8 60 40)"/><ellipse class="picto__trait" pathLength="1" style="--i:0;stroke-width:1.9" cx="60" cy="40" rx="38.5" ry="20.5" transform="rotate(-8 60 40)"/><path class="picto__trait" pathLength="1" style="stroke-width:1.5" d="M72.2 22.2L95.1 37.6"/><path class="picto__trait" pathLength="1" style="stroke-width:1.5" d="M59.7 22.4L91.9 44.1"/><path class="picto__trait" pathLength="1" style="stroke-width:1.5" d="M49.6 24.3L86.2 49"/><path class="picto__trait" pathLength="1" style="stroke-width:1.5" d="M41 27.2L79 52.8"/><path class="picto__trait" pathLength="1" style="stroke-width:1.5" d="M33.8 31L70.4 55.7"/><path class="picto__trait" pathLength="1" style="stroke-width:1.5" d="M28.1 35.9L60.3 57.6"/><path class="picto__trait" pathLength="1" style="stroke-width:1.5" d="M24.9 42.4L47.8 57.8"/><path class="picto__trait" pathLength="1" style="stroke-width:1.5" d="M25.6 47.4L43.4 26.2"/><path class="picto__trait" pathLength="1" style="stroke-width:1.5" d="M30.5 52.8L55.5 23"/><path class="picto__trait" pathLength="1" style="stroke-width:1.5" d="M37.3 55.9L65.7 22"/><path class="picto__trait" pathLength="1" style="stroke-width:1.5" d="M45.3 57.6L74.7 22.4"/><path class="picto__trait" pathLength="1" style="stroke-width:1.5" d="M54.3 58L82.7 24.1"/><path class="picto__trait" pathLength="1" style="stroke-width:1.5" d="M64.5 57L89.5 27.2"/><path class="picto__trait" pathLength="1" style="stroke-width:1.5" d="M76.6 53.8L94.4 32.6"/></svg>
+            <h3 class="article__nom">Gaufre fourrée</h3>
+            <p class="article__prix">2,20&nbsp;€</p>
+            <p class="article__texte">Fine et ovale, fourrée de vergeoise au beurre, comme à Lille.</p>
+            <p class="article__allergenes"><span>Allergènes&nbsp;:</span> gluten, lait, œufs</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="relance" aria-labelledby="relance-titre">
+      <div class="contenu relance__grille">
+        <div>
+          <h2 id="relance-titre" class="titre">On vous le met de côté.</h2>
+          <p class="chapo">Réservez votre pain en ligne et passez le prendre à la fournée de votre choix. Vous payez en boutique.</p>
+          <div class="actions">
+            <a class="bouton bouton--four" href="index.html#reserver">Réserver mon pain</a>
+            <a class="bouton bouton--trait" href="gateaux.html">Gâteaux sur commande</a>
+          </div>
+        </div>
+        <div class="allergenes">
+          <h2 class="allergenes__titre">Allergènes</h2>
+          <p>Tous nos pains contiennent du gluten. Pour le reste, chaque produit le dit sous son nom. La liste complète des quatorze allergènes est au comptoir&nbsp;: demandez-la à Claire.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <p class="pied__enseigne" aria-hidden="true">Delcourt</p>
+    <svg class="baguette pied__baguette" viewBox="0 0 600 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <use class="baguette__corps" href="#baguette-corps"/>
+      <path class="baguette__grigne" style="--i:0" d="M84 58Q99.6 28.8 132 22Q116.4 51.2 84 58Z"/>
+      <path class="baguette__grigne" style="--i:1" d="M148 58Q163.6 28.8 196 22Q180.4 51.2 148 58Z"/>
+      <path class="baguette__grigne" style="--i:2" d="M212 58Q227.6 28.8 260 22Q244.4 51.2 212 58Z"/>
+      <path class="baguette__grigne" style="--i:3" d="M276 58Q291.6 28.8 324 22Q308.4 51.2 276 58Z"/>
+      <path class="baguette__grigne" style="--i:4" d="M340 58Q355.6 28.8 388 22Q372.4 51.2 340 58Z"/>
+      <path class="baguette__grigne" style="--i:5" d="M404 58Q419.6 28.8 452 22Q436.4 51.2 404 58Z"/>
+      <path class="baguette__grigne" style="--i:6" d="M468 58Q483.6 28.8 516 22Q500.4 51.2 468 58Z"/>
+    </svg>
+    <nav class="pied__nav" id="pages" aria-label="Pages du site, en bas">
+      <a href="index.html">Accueil</a>
+      <a href="pains.html" aria-current="page">Nos pains</a>
+      <a href="gateaux.html">Gâteaux</a>
+      <a href="index.html#reserver">Réserver</a>
+      <a href="index.html#venir">Venir</a>
+      <a href="en/bread.html" hreflang="en" lang="en">English</a>
+    </nav>
+    <div class="pied__texte">
+      <p>Boulangerie Delcourt · 12 rue du Four-à-Pain, 62630 Étaples</p>
+      <p>Commerce fictif, créé pour montrer ce que donne un site Premium. <a href="https://moreaudigital.fr/">Moreau Digital</a></p>
+      <p class="pied__credits">Photos Unsplash&nbsp;: Skyler Ewing, Gaëlle Marcel, Santesson, Tetiana Padurets, Sobalc, The Now Time, NS Doyle, Tunnuz, Mae Mu, Pic of Tasty. Dessins de pains et de gâteaux&nbsp;: Moreau Digital.</p>
+    </div>
+  </footer>
+
+  <!-- Le menu sort de la barre du bas comme un sachet de boulangerie -->
+  <dialog class="sachet" id="menu" aria-labelledby="menu-titre">
+    <div class="sachet__papier">
+      <div class="sachet__tete">
+        <p class="sachet__enseigne" id="menu-titre">Delcourt</p>
+        <button class="sachet__fermer" type="button" data-fermer aria-label="Fermer le menu"><svg class="icone" aria-hidden="true"><use href="#i-fermer"/></svg></button>
+      </div>
+      <svg class="baguette sachet__baguette" viewBox="0 0 600 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <use class="baguette__corps" href="#baguette-corps"/>
+        <path class="baguette__grigne" style="--i:0" d="M84 58Q99.6 28.8 132 22Q116.4 51.2 84 58Z"/>
+        <path class="baguette__grigne" style="--i:1" d="M148 58Q163.6 28.8 196 22Q180.4 51.2 148 58Z"/>
+        <path class="baguette__grigne" style="--i:2" d="M212 58Q227.6 28.8 260 22Q244.4 51.2 212 58Z"/>
+        <path class="baguette__grigne" style="--i:3" d="M276 58Q291.6 28.8 324 22Q308.4 51.2 276 58Z"/>
+        <path class="baguette__grigne" style="--i:4" d="M340 58Q355.6 28.8 388 22Q372.4 51.2 340 58Z"/>
+        <path class="baguette__grigne" style="--i:5" d="M404 58Q419.6 28.8 452 22Q436.4 51.2 404 58Z"/>
+        <path class="baguette__grigne" style="--i:6" d="M468 58Q483.6 28.8 516 22Q500.4 51.2 468 58Z"/>
+      </svg>
+      <ul class="sachet__liste">
+        <li><a href="index.html"><span class="sachet__page">Accueil</span><span class="sachet__quoi">Le fournil, à cette minute</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="index.html#nuit"><span class="sachet__page">La nuit au fournil</span><span class="sachet__quoi">De 22&nbsp;h à l’ouverture</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="pains.html" aria-current="page"><span class="sachet__page">Nos pains</span><span class="sachet__quoi">Le pain du jour, et tous les autres</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="gateaux.html"><span class="sachet__page">Gâteaux</span><span class="sachet__quoi">Sur commande, pour vos fêtes</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="index.html#reserver"><span class="sachet__page">Réserver</span><span class="sachet__quoi">Votre pain mis de côté</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="index.html#venir"><span class="sachet__page">Venir</span><span class="sachet__quoi">Adresse, horaires, plan</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+      </ul>
+      <p class="sachet__pied"><a class="bouton bouton--encre" href="en/bread.html" hreflang="en" lang="en">English version</a><a class="bouton bouton--trait" href="tel:+33353014791"><svg class="icone" aria-hidden="true"><use href="#i-tel"/></svg>03&nbsp;53&nbsp;01&nbsp;47&nbsp;91</a></p>
+    </div>
+  </dialog>
+
+  <nav class="dock" aria-label="Actions rapides">
+    <a class="dock__lien dock__lien--carre" href="tel:+33353014791"><svg class="icone" aria-hidden="true"><use href="#i-tel"/></svg><span class="visuellement-cache">Appeler la boulangerie</span></a>
+    <a class="dock__lien dock__lien--four" href="index.html#reserver">Réserver mon pain</a>
+    <a class="dock__lien dock__lien--carre" href="#pages" data-menu><svg class="icone" aria-hidden="true"><use href="#i-menu"/></svg><span class="visuellement-cache">Menu</span></a>
+  </nav>
+</body>
+</html>

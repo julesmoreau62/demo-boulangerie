@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr" data-moment="jour">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gâteaux sur commande · Boulangerie Delcourt, Étaples</title>
+  <meta name="description" content="Commandez votre gâteau à la Boulangerie Delcourt à Étaples : entremets, tarte au sucre, pièce montée, bûche de Noël. Remplissez le bon, Claire vous rappelle pour confirmer.">
+  <!-- Démo : commerce fictif, à ne pas indexer -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f4ecdf">
+  <link rel="alternate" hreflang="fr" href="https://julesmoreau62.github.io/demo-boulangerie/gateaux.html">
+  <link rel="alternate" hreflang="en" href="https://julesmoreau62.github.io/demo-boulangerie/en/cakes.html">
+  <link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    /* Avant le premier affichage : jour ou nuit à Étaples, pour ne pas clignoter. */
+    (function (d) {
+      d.classList.add("js");
+      try {
+        var q = /[?&]heure=(\d{1,2})(?:[:h](\d{2}))?/.exec(location.search);
+        var p = q ? [q[1], q[2] || 0] : new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Paris", hour: "2-digit", minute: "2-digit", hourCycle: "h23" }).format(new Date()).split(":");
+        var m = +p[0] * 60 + +p[1];
+        d.setAttribute("data-moment", m >= 1200 || m < 390 ? "nuit" : "jour");
+      } catch (e) {}
+    })(document.documentElement);
+  </script>
+  <script src="app.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "name": "Gâteaux sur commande, Boulangerie Delcourt",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Product", "name": "Trois chocolats" },
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "4.20", "priceCurrency": "EUR", "unitText": "la part" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Product", "name": "Poire-caramel" },
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "4.20", "priceCurrency": "EUR", "unitText": "la part" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Product", "name": "Pièce montée" },
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "1.10", "priceCurrency": "EUR", "unitText": "le chou" }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": { "@type": "Product", "name": "Bûche de Noël" },
+        "priceSpecification": { "@type": "UnitPriceSpecification", "price": "4.40", "priceCurrency": "EUR", "unitText": "la part" }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <!-- La marque : une boule de pain vue du dessus, trois coups de lame. La nuit, c'est aussi la lune. -->
+      <mask id="grigne" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="32">
+        <rect width="32" height="32" fill="#fff"/>
+        <path d="M9.2 11.6c3.2-2.3 7-3.2 10.6-2.8M7.4 17.4c4.4-3.2 9.9-4.6 15.4-4.1M10.4 23.1c3.3-2.1 7.3-2.9 11.2-2.4" fill="none" stroke="#000" stroke-width="2.3" stroke-linecap="round"/>
+      </mask>
+      <!-- La baguette des sachets : sept coups de lame -->
+      <path id="baguette-corps" d="M10 47C8 34 26 22 58 18C180 6 420 4 548 14C578 17 594 28 592 40C590 53 572 62 540 65C420 76 180 75 60 66C30 63 12 58 10 47Z"/>
+    </defs>
+    <symbol id="marque" viewBox="0 0 32 32"><circle cx="16" cy="16" r="14.5" fill="currentColor" mask="url(#grigne)"/></symbol>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-fleche" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bas" viewBox="0 0 24 24"><path d="M12 4v15M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6.5h16M4 12h16M4 17.5h16" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol>
+    <symbol id="i-fermer" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol>
+  </svg>
+
+  <p class="bandeau-demo">Démo · commerce fictif, réalisé par <a href="https://moreaudigital.fr/">Moreau Digital</a> · formule Premium</p>
+
+  <header class="barre">
+    <a class="barre__marque" href="index.html"><svg aria-hidden="true"><use href="#marque"/></svg><span class="visuellement-cache">Delcourt, accueil</span></a>
+    <nav class="barre__nav" aria-label="Pages du site">
+      <a href="index.html#nuit">La nuit</a>
+      <a href="pains.html">Nos pains</a>
+      <a href="gateaux.html" aria-current="page">Gâteaux</a>
+      <a href="index.html#reserver">Réserver</a>
+      <a href="index.html#venir">Venir</a>
+    </nav>
+    <p class="etat" data-etat hidden><span class="etat__point" aria-hidden="true"></span><span data-etat-texte></span></p>
+    <a class="langue" href="en/cakes.html" hreflang="en" lang="en" aria-label="English version">EN</a>
+  </header>
+
+  <main id="haut">
+
+    <!-- Gâteaux : la pièce montée se monte, puis le bon de commande dessine le gâteau -->
+    <section class="page-tete page-tete--gateaux" aria-labelledby="titre">
+      <h1 id="titre" class="page-tete__titre" data-enseigne>Gâteaux</h1>
+      <p class="page-tete__sous">Sur commande, pour les anniversaires, les communions et les dimanches en famille.</p>
+      <div class="page-tete__scene">
+        <svg class="choux" viewBox="0 0 282 264" role="img" aria-label="Une pièce montée de 36 choux sur sa base en nougatine"><path class="choux__base" d="M5.0 263.9L13.0 244.9L269.0 244.9L277.0 263.9Z"/><path class="choux__fil choux__fil--base" d="M15.0 249.9L22.0 254.9L29.0 249.9L36.0 254.9L43.0 249.9L50.0 254.9L57.0 249.9L64.0 254.9L71.0 249.9L78.0 254.9L85.0 249.9L92.0 254.9L99.0 249.9L106.0 254.9L113.0 249.9L120.0 254.9L127.0 249.9L134.0 254.9L141.0 249.9L148.0 254.9L155.0 249.9L162.0 254.9L169.0 249.9L176.0 254.9L183.0 249.9L190.0 254.9L197.0 249.9L204.0 254.9L211.0 249.9L218.0 254.9L225.0 249.9L232.0 254.9L239.0 249.9L246.0 254.9L253.0 249.9L260.0 254.9L267.0 249.9"/><g class="choux__piece" style="--r:0;--c:0"><circle class="choux__chou" cx="32.5" cy="228.4" r="15.5"/><path class="choux__reflet" d="M24.4 225.6Q22.9 218.1 30.9 219.1Q27.9 223.1 24.4 225.6Z"/></g><g class="choux__piece" style="--r:0;--c:1"><circle class="choux__chou" cx="63.5" cy="228.4" r="15.5"/><path class="choux__reflet" d="M55.4 225.6Q53.9 218.1 62.0 219.1Q58.9 223.1 55.4 225.6Z"/></g><g class="choux__piece" style="--r:0;--c:2"><circle class="choux__chou" cx="94.5" cy="228.4" r="15.5"/><path class="choux__reflet" d="M86.4 225.6Q84.9 218.1 93.0 219.1Q89.9 223.1 86.4 225.6Z"/></g><g class="choux__piece" style="--r:0;--c:3"><circle class="choux__chou" cx="125.5" cy="228.4" r="15.5"/><path class="choux__reflet" d="M117.4 225.6Q115.9 218.1 124.0 219.1Q120.9 223.1 117.4 225.6Z"/></g><g class="choux__piece" style="--r:0;--c:4"><circle class="choux__chou" cx="156.5" cy="228.4" r="15.5"/><path class="choux__reflet" d="M148.4 225.6Q146.9 218.1 154.9 219.1Q151.9 223.1 148.4 225.6Z"/></g><g class="choux__piece" style="--r:0;--c:5"><circle class="choux__chou" cx="187.5" cy="228.4" r="15.5"/><path class="choux__reflet" d="M179.4 225.6Q177.9 218.1 185.9 219.1Q182.9 223.1 179.4 225.6Z"/></g><g class="choux__piece" style="--r:0;--c:6"><circle class="choux__chou" cx="218.5" cy="228.4" r="15.5"/><path class="choux__reflet" d="M210.4 225.6Q208.9 218.1 216.9 219.1Q213.9 223.1 210.4 225.6Z"/></g><g class="choux__piece" style="--r:0;--c:7"><circle class="choux__chou" cx="249.5" cy="228.4" r="15.5"/><path class="choux__reflet" d="M241.4 225.6Q239.9 218.1 247.9 219.1Q244.9 223.1 241.4 225.6Z"/></g><g class="choux__piece" style="--r:1;--c:0"><circle class="choux__chou" cx="48.0" cy="201.8" r="15.5"/><path class="choux__reflet" d="M39.9 199.0Q38.4 191.5 46.5 192.5Q43.4 196.5 39.9 199.0Z"/></g><g class="choux__piece" style="--r:1;--c:1"><circle class="choux__chou" cx="79.0" cy="201.8" r="15.5"/><path class="choux__reflet" d="M70.9 199.0Q69.4 191.5 77.5 192.5Q74.4 196.5 70.9 199.0Z"/></g><g class="choux__piece" style="--r:1;--c:2"><circle class="choux__chou" cx="110.0" cy="201.8" r="15.5"/><path class="choux__reflet" d="M101.9 199.0Q100.4 191.5 108.5 192.5Q105.4 196.5 101.9 199.0Z"/></g><g class="choux__piece" style="--r:1;--c:3"><circle class="choux__chou" cx="141.0" cy="201.8" r="15.5"/><path class="choux__reflet" d="M132.9 199.0Q131.4 191.5 139.4 192.5Q136.4 196.5 132.9 199.0Z"/></g><g class="choux__piece" style="--r:1;--c:4"><circle class="choux__chou" cx="172.0" cy="201.8" r="15.5"/><path class="choux__reflet" d="M163.9 199.0Q162.4 191.5 170.4 192.5Q167.4 196.5 163.9 199.0Z"/></g><g class="choux__piece" style="--r:1;--c:5"><circle class="choux__chou" cx="203.0" cy="201.8" r="15.5"/><path class="choux__reflet" d="M194.9 199.0Q193.4 191.5 201.4 192.5Q198.4 196.5 194.9 199.0Z"/></g><g class="choux__piece" style="--r:1;--c:6"><circle class="choux__chou" cx="234.0" cy="201.8" r="15.5"/><path class="choux__reflet" d="M225.9 199.0Q224.4 191.5 232.4 192.5Q229.4 196.5 225.9 199.0Z"/></g><g class="choux__piece" style="--r:2;--c:0"><circle class="choux__chou" cx="63.5" cy="175.1" r="15.5"/><path class="choux__reflet" d="M55.4 172.3Q53.9 164.8 62.0 165.8Q58.9 169.8 55.4 172.3Z"/></g><g class="choux__piece" style="--r:2;--c:1"><circle class="choux__chou" cx="94.5" cy="175.1" r="15.5"/><path class="choux__reflet" d="M86.4 172.3Q84.9 164.8 93.0 165.8Q89.9 169.8 86.4 172.3Z"/></g><g class="choux__piece" style="--r:2;--c:2"><circle class="choux__chou" cx="125.5" cy="175.1" r="15.5"/><path class="choux__reflet" d="M117.4 172.3Q115.9 164.8 124.0 165.8Q120.9 169.8 117.4 172.3Z"/></g><g class="choux__piece" style="--r:2;--c:3"><circle class="choux__chou" cx="156.5" cy="175.1" r="15.5"/><path class="choux__reflet" d="M148.4 172.3Q146.9 164.8 154.9 165.8Q151.9 169.8 148.4 172.3Z"/></g><g class="choux__piece" style="--r:2;--c:4"><circle class="choux__chou" cx="187.5" cy="175.1" r="15.5"/><path class="choux__reflet" d="M179.4 172.3Q177.9 164.8 185.9 165.8Q182.9 169.8 179.4 172.3Z"/></g><g class="choux__piece" style="--r:2;--c:5"><circle class="choux__chou" cx="218.5" cy="175.1" r="15.5"/><path class="choux__reflet" d="M210.4 172.3Q208.9 164.8 216.9 165.8Q213.9 169.8 210.4 172.3Z"/></g><g class="choux__piece" style="--r:3;--c:0"><circle class="choux__chou" cx="79.0" cy="148.4" r="15.5"/><path class="choux__reflet" d="M70.9 145.7Q69.4 138.1 77.5 139.1Q74.4 143.2 70.9 145.7Z"/></g><g class="choux__piece" style="--r:3;--c:1"><circle class="choux__chou" cx="110.0" cy="148.4" r="15.5"/><path class="choux__reflet" d="M101.9 145.7Q100.4 138.1 108.5 139.1Q105.4 143.2 101.9 145.7Z"/></g><g class="choux__piece" style="--r:3;--c:2"><circle class="choux__chou" cx="141.0" cy="148.4" r="15.5"/><path class="choux__reflet" d="M132.9 145.7Q131.4 138.1 139.4 139.1Q136.4 143.2 132.9 145.7Z"/></g><g class="choux__piece" style="--r:3;--c:3"><circle class="choux__chou" cx="172.0" cy="148.4" r="15.5"/><path class="choux__reflet" d="M163.9 145.7Q162.4 138.1 170.4 139.1Q167.4 143.2 163.9 145.7Z"/></g><g class="choux__piece" style="--r:3;--c:4"><circle class="choux__chou" cx="203.0" cy="148.4" r="15.5"/><path class="choux__reflet" d="M194.9 145.7Q193.4 138.1 201.4 139.1Q198.4 143.2 194.9 145.7Z"/></g><g class="choux__piece" style="--r:4;--c:0"><circle class="choux__chou" cx="94.5" cy="121.8" r="15.5"/><path class="choux__reflet" d="M86.4 119.0Q84.9 111.5 93.0 112.5Q89.9 116.5 86.4 119.0Z"/></g><g class="choux__piece" style="--r:4;--c:1"><circle class="choux__chou" cx="125.5" cy="121.8" r="15.5"/><path class="choux__reflet" d="M117.4 119.0Q115.9 111.5 124.0 112.5Q120.9 116.5 117.4 119.0Z"/></g><g class="choux__piece" style="--r:4;--c:2"><circle class="choux__chou" cx="156.5" cy="121.8" r="15.5"/><path class="choux__reflet" d="M148.4 119.0Q146.9 111.5 154.9 112.5Q151.9 116.5 148.4 119.0Z"/></g><g class="choux__piece" style="--r:4;--c:3"><circle class="choux__chou" cx="187.5" cy="121.8" r="15.5"/><path class="choux__reflet" d="M179.4 119.0Q177.9 111.5 185.9 112.5Q182.9 116.5 179.4 119.0Z"/></g><g class="choux__piece" style="--r:5;--c:0"><circle class="choux__chou" cx="110.0" cy="95.1" r="15.5"/><path class="choux__reflet" d="M101.9 92.3Q100.4 84.8 108.5 85.8Q105.4 89.8 101.9 92.3Z"/></g><g class="choux__piece" style="--r:5;--c:1"><circle class="choux__chou" cx="141.0" cy="95.1" r="15.5"/><path class="choux__reflet" d="M132.9 92.3Q131.4 84.8 139.4 85.8Q136.4 89.8 132.9 92.3Z"/></g><g class="choux__piece" style="--r:5;--c:2"><circle class="choux__chou" cx="172.0" cy="95.1" r="15.5"/><path class="choux__reflet" d="M163.9 92.3Q162.4 84.8 170.4 85.8Q167.4 89.8 163.9 92.3Z"/></g><g class="choux__piece" style="--r:6;--c:0"><circle class="choux__chou" cx="125.5" cy="68.5" r="15.5"/><path class="choux__reflet" d="M117.4 65.7Q115.9 58.2 124.0 59.2Q120.9 63.2 117.4 65.7Z"/></g><g class="choux__piece" style="--r:6;--c:1"><circle class="choux__chou" cx="156.5" cy="68.5" r="15.5"/><path class="choux__reflet" d="M148.4 65.7Q146.9 58.2 154.9 59.2Q151.9 63.2 148.4 65.7Z"/></g><g class="choux__piece" style="--r:7;--c:0"><circle class="choux__chou" cx="141.0" cy="41.8" r="15.5"/><path class="choux__reflet" d="M132.9 39.0Q131.4 31.5 139.4 32.5Q136.4 36.5 132.9 39.0Z"/></g><path class="choux__fil" style="--f:0" d="M35.0 190.7L43.8 191.8L52.7 192.9L61.5 193.8L70.3 194.6L79.2 195.1L88.0 195.5L96.8 195.7L105.7 195.6L114.5 195.4L123.3 195.0L132.2 194.5L141.0 193.9L149.8 193.3L158.7 192.8L167.5 192.4L176.3 192.2L185.2 192.1L194.0 192.3L202.8 192.7L211.7 193.3L220.5 194.0L229.3 195.0L238.2 196.0L247.0 197.1"/><path class="choux__fil" style="--f:1" d="M67.2 143.4L73.4 143.3L79.5 143.1L85.7 142.6L91.8 142.0L98.0 141.2L104.1 140.2L110.3 139.3L116.4 138.3L122.6 137.3L128.7 136.5L134.9 135.9L141.0 135.4L147.1 135.1L153.3 135.0L159.4 135.2L165.6 135.6L171.7 136.1L177.9 136.7L184.0 137.4L190.2 138.0L196.3 138.6L202.5 139.2L208.6 139.5L214.8 139.7"/><path class="choux__fil" style="--f:2" d="M97.0 88.5L100.6 88.1L104.3 87.6L108.0 86.9L111.7 86.2L115.3 85.5L119.0 84.9L122.7 84.4L126.3 84.0L130.0 83.8L133.7 83.8L137.3 84.1L141.0 84.5L144.7 85.1L148.3 85.9L152.0 86.8L155.7 87.8L159.3 88.8L163.0 89.7L166.7 90.4L170.3 91.1L174.0 91.5L177.7 91.8L181.4 91.8L185.0 91.6"/></svg>
+      </div>
+      <div class="page-tete__mots">
+        <p class="page-tete__phrase">Remplissez le bon trois jours avant. Claire vous rappelle pour confirmer, et vous payez en venant le chercher.</p>
+        <div class="actions">
+          <a class="bouton bouton--four" href="#bon">Remplir le bon de commande</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Le bon de commande : on le remplit, le croquis suit -->
+    <section class="commander" id="bon" aria-labelledby="bon-titre">
+      <div class="contenu">
+        <h2 id="bon-titre" class="titre">Un gâteau à votre nom.</h2>
+        <p class="chapo">Choisissez le gâteau et le nombre de parts&nbsp;: le croquis suit. Comptez trois jours, une semaine pour une pièce montée de plus de quarante personnes.</p>
+
+        <form class="bon" data-bon novalidate>
+          <div class="bon__ombre">
+            <div class="bon__feuille" data-feuille>
+              <div class="bon__entete">
+                <p class="bon__maison"><strong>Boulangerie Delcourt</strong> · 12 rue du Four-à-Pain, Étaples · 03&nbsp;53&nbsp;01&nbsp;47&nbsp;91</p>
+                <p class="bon__titre">Bon de commande</p>
+                <p class="bon__numero">N°&nbsp;<span data-bon-numero></span></p>
+              </div>
+
+              <fieldset class="bon__bloc bon__gateaux">
+                <legend class="bon__etiquette">Gâteau</legend>
+                <div class="cases">
+                <label class="case"><input type="radio" name="gateau" value="chocolat" checked><span class="case__boite" aria-hidden="true"></span><span class="case__nom">Trois chocolats</span><span class="case__prix">4,20&nbsp;€ la part</span></label>
+                <label class="case"><input type="radio" name="gateau" value="poire"><span class="case__boite" aria-hidden="true"></span><span class="case__nom">Poire-caramel</span><span class="case__prix">4,20&nbsp;€ la part</span></label>
+                <label class="case"><input type="radio" name="gateau" value="sucre"><span class="case__boite" aria-hidden="true"></span><span class="case__nom">Tarte au sucre</span><span class="case__prix">dès 9,50&nbsp;€</span></label>
+                <label class="case"><input type="radio" name="gateau" value="piece"><span class="case__boite" aria-hidden="true"></span><span class="case__nom">Pièce montée</span><span class="case__prix">1,10&nbsp;€ le chou</span></label>
+                <label class="case" data-saison="buche"><input type="radio" name="gateau" value="buche"><span class="case__boite" aria-hidden="true"></span><span class="case__nom">Bûche de Noël</span><span class="case__prix">4,40&nbsp;€ la part</span></label>
+                <label class="case" data-saison="galette"><input type="radio" name="gateau" value="galette"><span class="case__boite" aria-hidden="true"></span><span class="case__nom">Galette des rois</span><span class="case__prix">3,20&nbsp;€ la part</span></label>
+                <label class="case" data-saison="fraisier"><input type="radio" name="gateau" value="fraisier"><span class="case__boite" aria-hidden="true"></span><span class="case__nom">Fraisier</span><span class="case__prix">4,50&nbsp;€ la part</span></label>
+                </div>
+                <p class="bon__description" data-description>Noir, lait et blanc sur un croustillant praliné.</p>
+              </fieldset>
+
+              <div class="bon__croquis">
+                <p class="bon__etiquette" aria-hidden="true">Croquis</p>
+                <svg class="croquis" data-croquis viewBox="0 0 400 262" role="img" aria-label="Croquis du gâteau"></svg>
+                <p class="croquis__parts" data-cote aria-hidden="true"></p>
+              </div>
+
+              <div class="bon__bloc bon__parts">
+                <p class="bon__etiquette" id="parts-titre" data-parts-titre>Nombre de parts</p>
+                <div class="pas pas--bon" role="group" aria-labelledby="parts-titre">
+                  <button type="button" data-parts-moins aria-label="Moins">−</button>
+                  <output data-parts aria-live="polite">8</output>
+                  <button type="button" data-parts-plus aria-label="Plus">+</button>
+                </div>
+              </div>
+
+              <label class="bon__bloc bon__champ" data-ligne-plaque>
+                <span class="bon__etiquette">Écrit sur la plaque en chocolat</span>
+                <input name="plaque" type="text" maxlength="24" autocomplete="off" placeholder="Joyeux anniversaire Léa" data-plaque>
+              </label>
+
+              <div class="bon__bloc bon__retrait">
+                <label class="bon__champ"><span class="bon__etiquette">Retrait le</span><select name="date" data-date></select></label>
+                <label class="bon__champ"><span class="bon__etiquette">Plutôt</span><select name="moment" data-moment-retrait><option value="matin">le matin</option><option value="soir">l’après-midi</option></select></label>
+              </div>
+
+              <label class="bon__bloc bon__champ"><span class="bon__etiquette">Nom</span><input name="nom" type="text" autocomplete="name" required></label>
+              <label class="bon__bloc bon__champ"><span class="bon__etiquette">Téléphone</span><input name="tel" type="tel" autocomplete="tel" inputmode="tel" required></label>
+              <label class="bon__bloc bon__champ"><span class="bon__etiquette">Précision, allergie</span><input name="note" type="text" placeholder="Facultatif" data-note></label>
+
+              <div class="bon__bas">
+                <p class="bon__prix"><span class="bon__etiquette">Prix indicatif</span> <strong data-bon-prix>33,60&nbsp;€</strong></p>
+                <p class="bon__petit">À régler en boutique, au retrait.</p>
+              </div>
+
+              <div class="bon__reponse" data-bon-reponse hidden>
+                <p class="bon__merci" data-bon-merci></p>
+                <span class="tampon" aria-hidden="true">Reçu</span>
+              </div>
+            </div>
+          </div>
+
+          <p class="erreur" data-erreur role="alert" hidden></p>
+          <button class="bouton bouton--four bouton--large" type="submit" data-envoyer>Envoyer la demande</button>
+          <button class="bouton bouton--trait bouton--large" type="button" data-nouvelle hidden>Remplir un autre bon</button>
+          <p class="note-demo">Démo&nbsp;: rien n’est envoyé. Sur un vrai site, la demande arrive à la boulangerie par e-mail.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Les gâteaux de saison : la page sait lesquels on peut commander aujourd'hui -->
+    <section class="saisons" aria-labelledby="saisons-titre">
+      <div class="contenu">
+        <h2 id="saisons-titre" class="titre">Et selon la saison</h2>
+        <ul class="saisons__liste">
+          <li class="saison" data-saison-carte="buche">
+            <svg class="picto saison__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M24 32L92 32L92 64L24 64C17 64 13 57 13 48C13 39 17 32 24 32Z"/><path class="picto__corps" d="M40 33L40 24Q40 21 43 21L51 21Q54 21 54 24L54 33Z"/><ellipse class="picto__corps" cx="92" cy="48" rx="8" ry="16"/><path class="picto__trait" pathLength="1" style="--i:0;stroke-width:1.6" d="M17 39L18.8 39.8L20.6 40.2L22.4 40L24.2 39.4L26 38.6L27.8 38L29.6 37.8L31.4 38.2L33.2 39L35 39.8L36.8 40.2L38.6 40L40.4 39.4L42.2 38.6L44 37.9L45.8 37.8L47.6 38.3L49.4 39L51.2 39.8L53 40.2L54.8 40L56.6 39.4L58.4 38.5L60.2 37.9L62 37.8L63.8 38.3L65.6 39.1L67.4 39.8L69.2 40.2L71 40L72.8 39.3L74.6 38.5L76.4 37.9L78.2 37.8L80 38.3L81.8 39.1L83.6 39.8L85.4 40.2"/><path class="picto__trait" pathLength="1" style="--i:1;stroke-width:1.6" d="M17 48L18.8 48.2L20.6 47.8L22.4 47L24.2 46.3L26 45.8L27.8 45.9L29.6 46.6L31.4 47.4L33.2 48L35 48.2L36.8 47.8L38.6 47L40.4 46.2L42.2 45.8L44 45.9L45.8 46.6L47.6 47.4L49.4 48L51.2 48.2L53 47.8L54.8 47L56.6 46.2L58.4 45.8L60.2 46L62 46.6L63.8 47.4L65.6 48L67.4 48.2L69.2 47.8L71 47L72.8 46.2L74.6 45.8L76.4 46L78.2 46.6L80 47.4L81.8 48.1L83.6 48.2L85.4 47.7"/><path class="picto__trait" pathLength="1" style="--i:2;stroke-width:1.6" d="M17 57.1L18.8 56.5L20.6 55.7L22.4 55L24.2 54.8L26 55.2L27.8 55.9L29.6 56.7L31.4 57.2L33.2 57.1L35 56.5L36.8 55.7L38.6 55L40.4 54.8L42.2 55.2L44 55.9L45.8 56.7L47.6 57.2L49.4 57.1L51.2 56.5L53 55.7L54.8 55L56.6 54.8L58.4 55.2L60.2 55.9L62 56.7L63.8 57.2L65.6 57.1L67.4 56.5L69.2 55.6L71 55L72.8 54.8L74.6 55.2L76.4 56L78.2 56.7L80 57.2L81.8 57.1L83.6 56.4L85.4 55.6"/><ellipse class="picto__trait" pathLength="1" style="--i:3;stroke-width:1.6" cx="92" cy="48" rx="4.6" ry="10"/><ellipse class="picto__grain" cx="92" cy="48" rx="1.5" ry="3"/><ellipse class="picto__trait" pathLength="1" style="--i:4;stroke-width:1.4" cx="47" cy="23.5" rx="4.2" ry="1.6"/></svg>
+            <h3 class="saison__nom">La bûche de Noël</h3>
+            <p>Marron-vanille ou chocolat noir, six ou huit parts.</p>
+            <p class="saison__quand" data-saison-quand>À commander jusqu’au 20 décembre.</p>
+            <a class="bouton bouton--encre" href="#bon" data-choisir="buche">Commander une bûche</a>
+          </li>
+          <li class="saison" data-saison-carte="galette">
+            <svg class="picto saison__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><circle class="picto__corps" cx="60" cy="40" r="32"/><circle class="picto__trait" pathLength="1" style="--i:0;stroke-width:2" cx="60" cy="40" r="27.5"/><path class="picto__trait" pathLength="1" style="--i:1;stroke-width:1.7" d="M64 40Q75 40.7 80.9 52.8"/><path class="picto__trait" pathLength="1" style="--i:2;stroke-width:1.7" d="M63.6 41.7Q73.2 47.2 73.3 60.6"/><path class="picto__trait" pathLength="1" style="--i:3;stroke-width:1.7" d="M62.5 43.1Q68.8 52.2 63 64.3"/><path class="picto__trait" pathLength="1" style="--i:4;stroke-width:1.7" d="M60.9 43.9Q62.6 54.8 52.2 63.2"/><path class="picto__trait" pathLength="1" style="--i:5;stroke-width:1.7" d="M59.1 43.9Q55.9 54.4 42.9 57.5"/><path class="picto__trait" pathLength="1" style="--i:6;stroke-width:1.7" d="M57.5 43.1Q50.1 51.2 37 48.3"/><path class="picto__trait" pathLength="1" style="--i:7;stroke-width:1.7" d="M56.4 41.7Q46.2 45.8 35.6 37.5"/><path class="picto__trait" pathLength="1" style="--i:8;stroke-width:1.7" d="M56 40Q45 39.3 39.1 27.2"/><path class="picto__trait" pathLength="1" style="--i:9;stroke-width:1.7" d="M56.4 38.3Q46.8 32.8 46.7 19.4"/><path class="picto__trait" pathLength="1" style="--i:10;stroke-width:1.7" d="M57.5 36.9Q51.2 27.8 57 15.7"/><path class="picto__trait" pathLength="1" style="--i:11;stroke-width:1.7" d="M59.1 36.1Q57.4 25.2 67.8 16.8"/><path class="picto__trait" pathLength="1" style="--i:12;stroke-width:1.7" d="M60.9 36.1Q64.1 25.6 77.1 22.5"/><path class="picto__trait" pathLength="1" style="--i:13;stroke-width:1.7" d="M62.5 36.9Q69.9 28.8 83 31.7"/><path class="picto__trait" pathLength="1" style="--i:14;stroke-width:1.7" d="M63.6 38.3Q73.8 34.2 84.4 42.5"/></svg>
+            <h3 class="saison__nom">La galette des rois</h3>
+            <p>Frangipane au beurre, avec la fève et la couronne en papier.</p>
+            <p class="saison__quand" data-saison-quand>Du 2 au 31 janvier.</p>
+            <a class="bouton bouton--encre" href="#bon" data-choisir="galette">Commander une galette</a>
+          </li>
+          <li class="saison" data-saison-carte="fraisier">
+            <svg class="picto saison__picto" viewBox="0 0 120 80" aria-hidden="true" focusable="false" data-entaille><path class="picto__corps" d="M18 26L102 26L102 63L18 63Z"/><rect class="picto__grain" x="18" y="37" width="84" height="15"/><path class="picto__trait" pathLength="1" style="--i:0;stroke-width:1.6" d="M18 31.5L102 31.5"/><path class="picto__corps" d="M24.5 50.5C19.1 47 19.5 39.5 22.9 38.6Q24.5 38.2 24.5 39.6Q24.5 38.2 26.1 38.6C29.5 39.5 29.9 47 24.5 50.5Z"/><path class="picto__corps" d="M36.3 50.5C30.9 47 31.3 39.5 34.7 38.6Q36.3 38.2 36.3 39.6Q36.3 38.2 37.9 38.6C41.3 39.5 41.7 47 36.3 50.5Z"/><path class="picto__corps" d="M48.1 50.5C42.7 47 43.1 39.5 46.5 38.6Q48.1 38.2 48.1 39.6Q48.1 38.2 49.7 38.6C53.1 39.5 53.5 47 48.1 50.5Z"/><path class="picto__corps" d="M59.9 50.5C54.5 47 54.9 39.5 58.3 38.6Q59.9 38.2 59.9 39.6Q59.9 38.2 61.5 38.6C64.9 39.5 65.3 47 59.9 50.5Z"/><path class="picto__corps" d="M71.7 50.5C66.3 47 66.7 39.5 70.1 38.6Q71.7 38.2 71.7 39.6Q71.7 38.2 73.3 38.6C76.7 39.5 77.1 47 71.7 50.5Z"/><path class="picto__corps" d="M83.5 50.5C78.1 47 78.5 39.5 81.9 38.6Q83.5 38.2 83.5 39.6Q83.5 38.2 85.1 38.6C88.5 39.5 88.9 47 83.5 50.5Z"/><path class="picto__corps" d="M95.3 50.5C89.9 47 90.3 39.5 93.7 38.6Q95.3 38.2 95.3 39.6Q95.3 38.2 96.9 38.6C100.3 39.5 100.7 47 95.3 50.5Z"/></svg>
+            <h3 class="saison__nom">Le fraisier</h3>
+            <p>Les fraises de Samer, une génoise et de la crème mousseline.</p>
+            <p class="saison__quand" data-saison-quand>De mai à septembre.</p>
+            <a class="bouton bouton--encre" href="#bon" data-choisir="fraisier">Commander un fraisier</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pied">
+    <p class="pied__enseigne" aria-hidden="true">Delcourt</p>
+    <svg class="baguette pied__baguette" viewBox="0 0 600 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <use class="baguette__corps" href="#baguette-corps"/>
+      <path class="baguette__grigne" style="--i:0" d="M84 58Q99.6 28.8 132 22Q116.4 51.2 84 58Z"/>
+      <path class="baguette__grigne" style="--i:1" d="M148 58Q163.6 28.8 196 22Q180.4 51.2 148 58Z"/>
+      <path class="baguette__grigne" style="--i:2" d="M212 58Q227.6 28.8 260 22Q244.4 51.2 212 58Z"/>
+      <path class="baguette__grigne" style="--i:3" d="M276 58Q291.6 28.8 324 22Q308.4 51.2 276 58Z"/>
+      <path class="baguette__grigne" style="--i:4" d="M340 58Q355.6 28.8 388 22Q372.4 51.2 340 58Z"/>
+      <path class="baguette__grigne" style="--i:5" d="M404 58Q419.6 28.8 452 22Q436.4 51.2 404 58Z"/>
+      <path class="baguette__grigne" style="--i:6" d="M468 58Q483.6 28.8 516 22Q500.4 51.2 468 58Z"/>
+    </svg>
+    <nav class="pied__nav" id="pages" aria-label="Pages du site, en bas">
+      <a href="index.html">Accueil</a>
+      <a href="pains.html">Nos pains</a>
+      <a href="gateaux.html" aria-current="page">Gâteaux</a>
+      <a href="index.html#reserver">Réserver</a>
+      <a href="index.html#venir">Venir</a>
+      <a href="en/cakes.html" hreflang="en" lang="en">English</a>
+    </nav>
+    <div class="pied__texte">
+      <p>Boulangerie Delcourt · 12 rue du Four-à-Pain, 62630 Étaples</p>
+      <p>Commerce fictif, créé pour montrer ce que donne un site Premium. <a href="https://moreaudigital.fr/">Moreau Digital</a></p>
+      <p class="pied__credits">Photos Unsplash&nbsp;: Skyler Ewing, Gaëlle Marcel, Santesson, Tetiana Padurets, Sobalc, The Now Time, NS Doyle, Tunnuz, Mae Mu, Pic of Tasty. Dessins de pains et de gâteaux&nbsp;: Moreau Digital.</p>
+    </div>
+  </footer>
+
+  <!-- Le menu sort de la barre du bas comme un sachet de boulangerie -->
+  <dialog class="sachet" id="menu" aria-labelledby="menu-titre">
+    <div class="sachet__papier">
+      <div class="sachet__tete">
+        <p class="sachet__enseigne" id="menu-titre">Delcourt</p>
+        <button class="sachet__fermer" type="button" data-fermer aria-label="Fermer le menu"><svg class="icone" aria-hidden="true"><use href="#i-fermer"/></svg></button>
+      </div>
+      <svg class="baguette sachet__baguette" viewBox="0 0 600 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <use class="baguette__corps" href="#baguette-corps"/>
+        <path class="baguette__grigne" style="--i:0" d="M84 58Q99.6 28.8 132 22Q116.4 51.2 84 58Z"/>
+        <path class="baguette__grigne" style="--i:1" d="M148 58Q163.6 28.8 196 22Q180.4 51.2 148 58Z"/>
+        <path class="baguette__grigne" style="--i:2" d="M212 58Q227.6 28.8 260 22Q244.4 51.2 212 58Z"/>
+        <path class="baguette__grigne" style="--i:3" d="M276 58Q291.6 28.8 324 22Q308.4 51.2 276 58Z"/>
+        <path class="baguette__grigne" style="--i:4" d="M340 58Q355.6 28.8 388 22Q372.4 51.2 340 58Z"/>
+        <path class="baguette__grigne" style="--i:5" d="M404 58Q419.6 28.8 452 22Q436.4 51.2 404 58Z"/>
+        <path class="baguette__grigne" style="--i:6" d="M468 58Q483.6 28.8 516 22Q500.4 51.2 468 58Z"/>
+      </svg>
+      <ul class="sachet__liste">
+        <li><a href="index.html"><span class="sachet__page">Accueil</span><span class="sachet__quoi">Le fournil, à cette minute</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="index.html#nuit"><span class="sachet__page">La nuit au fournil</span><span class="sachet__quoi">De 22&nbsp;h à l’ouverture</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="pains.html"><span class="sachet__page">Nos pains</span><span class="sachet__quoi">Le pain du jour, et tous les autres</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="gateaux.html" aria-current="page"><span class="sachet__page">Gâteaux</span><span class="sachet__quoi">Sur commande, pour vos fêtes</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="index.html#reserver"><span class="sachet__page">Réserver</span><span class="sachet__quoi">Votre pain mis de côté</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+        <li><a href="index.html#venir"><span class="sachet__page">Venir</span><span class="sachet__quoi">Adresse, horaires, plan</span><svg class="icone" aria-hidden="true"><use href="#i-fleche"/></svg></a></li>
+      </ul>
+      <p class="sachet__pied"><a class="bouton bouton--encre" href="en/cakes.html" hreflang="en" lang="en">English version</a><a class="bouton bouton--trait" href="tel:+33353014791"><svg class="icone" aria-hidden="true"><use href="#i-tel"/></svg>03&nbsp;53&nbsp;01&nbsp;47&nbsp;91</a></p>
+    </div>
+  </dialog>
+
+  <nav class="dock" aria-label="Actions rapides">
+    <a class="dock__lien dock__lien--carre" href="tel:+33353014791"><svg class="icone" aria-hidden="true"><use href="#i-tel"/></svg><span class="visuellement-cache">Appeler la boulangerie</span></a>
+    <a class="dock__lien dock__lien--four" href="#bon">Commander un gâteau</a>
+    <a class="dock__lien dock__lien--carre" href="#pages" data-menu><svg class="icone" aria-hidden="true"><use href="#i-menu"/></svg><span class="visuellement-cache">Menu</span></a>
+  </nav>
+</body>
+</html>
