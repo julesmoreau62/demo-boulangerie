@@ -1,4 +1,4 @@
-/* Boulangerie Delcourt — démo Premium, la nuit au fournil.
+/* Boulangerie Delcourt — démo Standard, la nuit au fournil.
    Trois pages, en français à la racine et en anglais dans en/.
    L'accueil suit l'heure d'Étaples : le haut dit ce qui se passe au fournil à cette minute,
    la nuit se déroule au défilement, le ticket s'imprime pendant qu'on choisit son pain.

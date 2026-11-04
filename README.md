@@ -1,6 +1,6 @@
 # Démo boulangerie — Boulangerie Delcourt
 
-Site de démonstration de la formule **Premium** de [Moreau Digital](https://moreaudigital.fr) : un site sur mesure pour une boulangerie **fictive** à Étaples (62), en trois pages et en deux langues. Le fil rouge : ce que les clients ne voient jamais, le travail du boulanger pendant la nuit.
+Site de démonstration de la formule **Standard** de [Moreau Digital](https://moreaudigital.fr) : un site sur mesure pour une boulangerie **fictive** à Étaples (62), en trois pages et en deux langues. Le fil rouge : ce que les clients ne voient jamais, le travail du boulanger pendant la nuit.
 
 En ligne : https://julesmoreau62.github.io/demo-boulangerie/ (version anglaise : `en/`)
 
